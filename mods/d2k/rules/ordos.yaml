@@ -1,0 +1,338 @@
+CONYARDO:
+	Inherits: ^CONYARD
+	Buildable:
+		Owner: ordos
+	Transforms:
+		IntoActor: mcvo
+		Offset:1,1
+		Facing: 270
+
+PWRO:
+	Inherits: ^POWER
+	Buildable:
+		Prerequisites: conyardo
+		Owner: ordos
+
+REFO:
+	Inherits: ^REFINERY
+	Buildable:
+		Prerequisites: pwro
+		Owner: ordos
+	RenderBuildingWarFactory:
+		Image: REFO
+	FreeActor:
+		Actor: HARVESTERO
+		InitialActivity: FindResources
+		SpawnOffset: 1,2
+		Facing: 64
+
+BARRO:
+	Inherits: ^BARRACKS
+	Buildable:
+		Prerequisites: pwro
+		Owner: ordos
+
+GUNTOWERO:
+	Inherits: ^GUNTOWER
+	Buildable:
+		Prerequisites: conyardo
+		Owner: ordos
+
+ROCKETTOWERO:
+	Inherits: ^ROCKETTOWER
+	Buildable:
+		Prerequisites: radaro
+		Owner: ordos
+
+WALLO:
+	Inherits: ^WALL
+	Buildable:
+		Prerequisites: conyardo
+		Owner: ordos
+
+HIGHTECHO:
+	Inherits: ^HIGHTECH
+	Buildable:
+		Prerequisites: radaro
+		Owner: ordos
+
+RESEARCHO:
+	Inherits: ^RESEARCH
+	Buildable:
+		Prerequisites: radaro,heavyo
+		Owner: ordos
+
+PALACEO:
+	Inherits: ^PALACE
+	Buildable:
+		Prerequisites: researcho
+		Owner: ordos
+	ParatroopersPower:
+		Image: carryallicon
+		UnitType: carryall.infantry
+		FlareTime: 0
+		ChargeTime: 360
+		Description: Paratroopers
+		LongDesc: A Carryall drops a squad of Infantry \nanywhere on the map
+		Prerequisites: HIGHTECHO
+		DropItems: RIFLE, RIFLE, ENGINEER, BAZOOKA, BAZOOKA
+		SelectTargetSound:
+		FlareType:
+	CanPowerDown:
+	RequiresPower:
+	SupportPowerChargeBar:
+
+SILOO:
+	Inherits: ^SILO
+	Buildable:
+		Prerequisites: refo
+		Owner: ordos
+
+LIGHTO:
+	Inherits: ^LIGHT
+	Buildable:
+		Prerequisites: refo
+		Owner: ordos
+	RenderBuildingWarFactory:
+		Image: LIGHTO
+
+HEAVYO:
+	Inherits: ^HEAVY
+	Buildable:
+		Prerequisites: lighto
+		Owner: ordos
+	RenderBuildingWarFactory:
+		Image: HEAVYO
+
+RADARO:
+	Inherits: ^RADAR
+	Buildable:
+		Prerequisites: barro
+		Owner: ordos
+
+STARPORTO:
+	Inherits: ^STARPORT
+	Buildable:
+		Prerequisites: radaro
+		Owner: ordos
+
+REPAIRO:
+	Inherits: ^REPAIR
+	Buildable:
+		Prerequisites: heavyo
+		Owner: ordos
+
+MCVO:
+	Inherits: ^MCV
+	Buildable:
+		Prerequisites: heavyo,repairo
+		Owner: ordos
+	Transforms:
+		Facing: 10
+		IntoActor: conyardo
+		Offset:-1,-1
+		NoTransformSounds: OI_DPLOY.AUD
+	RenderUnit:
+		Image: DMCV
+
+MCVO.starport:
+	Inherits: MCVO
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporto
+	Valued:
+		Cost: 1499
+
+HARVESTERO:
+	Inherits: ^HARVESTER
+	Buildable:
+		Prerequisites: heavyo,refo
+		Owner: ordos
+	RenderUnit:
+		Image: HARVESTER
+
+HARVESTERO.starport:
+	Inherits: HARVESTERO
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporto
+	Valued:
+		Cost: 895
+
+COMBATO:
+	Inherits: ^COMBAT
+	Tooltip:
+		Icon: combatoicon
+	Buildable:
+		Prerequisites: heavyo
+		Owner: ordos
+	RenderUnitTurreted:
+		Image: COMBATO
+
+COMBATO.starport:
+	Inherits: COMBATO
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporto
+	Valued:
+		Cost: 595
+
+RAIDER:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 15
+		Prerequisites: lighto
+		Owner: ordos
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Raider
+		Description: Weak Scout.\n Decent vs. Infantry
+	Selectable:
+		Bounds: 24,24
+	Health:
+		HP: 125
+	Armor:
+		Type: Light
+	Mobile:
+		ROT: 10
+		Speed: 15
+	RevealsShroud:
+		Range: 8
+	RenderUnit:
+	AttackFrontal:
+		PrimaryWeapon: M60mg
+		PrimaryOffset: 0,0,0,-4
+		SecondaryWeapon: M60mg
+		SecondaryOffset: 0,0,0,-4
+	AutoTarget:
+	Cargo:
+		Types: Infantry
+		MaxWeight: 1
+		PipCount: 1
+		UnloadFacing: 220
+
+QUADO:
+	Inherits: ^QUAD
+	Buildable:
+		Prerequisites: lighto
+		Owner: ordos
+	RenderUnit:
+		Image: QUAD
+
+QUADO.starport:
+	Inherits: QUADO
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporto
+	Valued:
+		Cost: 295
+
+SIEGETANKO:
+	Inherits: ^SIEGETANK
+	Buildable:
+		Prerequisites: heavyo, radaro
+		Owner: ordos
+	RenderUnitTurreted:
+		Image: SIEGETANK
+
+SIEGETANKO.starport:
+	Inherits: SIEGETANKO
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporto
+	Valued:
+		Cost: 495
+
+MISSILETANKO:
+	Inherits: ^MISSILETANK
+	Buildable:
+		Prerequisites: heavyo
+		Owner: ordos
+	RenderUnit:
+		Image: MISSILETANK
+
+MISSILETANKO.starport:
+	Inherits: MISSILETANKO
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporto
+	Valued:
+		Cost: 599
+
+CARRYALLO:
+	Inherits: ^CARRYALL
+	Buildable:
+		Prerequisites: hightecho
+		BuiltAt: hightecho
+		Owner: ordos
+	RenderUnit:
+		Image: CARRYALL
+
+CARRYALLO.starport:
+	Inherits: CARRYALLO
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporto
+	Valued:
+		Cost: 999
+
+DEVIATORTANK:
+	Inherits: ^Tank
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Deviator
+		Description: Will cause no actual damage.\nFires a warhead which changes allegiances\n but does not effect buildings or tanks.
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 50
+		Prerequisites: heavyo,researcho
+		Owner: ordos
+	Mobile:
+		Speed: 6
+	Health:
+		HP: 150
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 6
+	RenderUnit:
+	AttackLoyalty:
+		PrimaryWeapon: FakeMissile
+		PrimaryLocalOffset: -7,2,0,0,25, 7,2,0,0,-25
+		PrimaryRecoil: 1
+	AutoTarget:
+	Selectable:
+		Bounds: 30,30
+
+SABOTEUR:
+	Inherits: ^Infantry
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 110
+		Prerequisites: palaceo
+		Owner: ordos
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Saboteur
+		Description: Sneaky infantry, armed with explosives.\n  Strong vs Buildings\n  Weak vs Everything\n  Special Ability: destroy buildings
+	Selectable:
+		Voice: SaboteurVoice
+		Bounds: 12,17,0,0
+	Health:
+		HP: 100
+	Mobile:
+		Speed: 5
+	RevealsShroud:
+		Range: 6
+	C4Demolition:
+		C4Delay: 45
+	TakeCover:
+	-RenderInfantry:
+	RenderInfantryProne:
+	-AutoTarget:
+	AttackMove:
+		JustMove: true

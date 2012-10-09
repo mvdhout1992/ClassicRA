@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version={VERSION}
+Name=OpenRA
+Comment=Reimagining of Red Alert and Command & Conquer
+Icon=openra
+Exec=/usr/bin/openra
+Terminal=false
+Categories=Game;

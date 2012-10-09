@@ -1,0 +1,884 @@
+NEW:
+	Engine:
+		General performance improvements
+		Fixed minimap export breaking subsequent actions in the editor
+		Added owner chooser for new actors in the editor
+		Added actor info panel in the editor (doubleclick)
+		Added a Setup Default Players menu item to map editor
+	Both Mods:
+		Server lobbies upon creation use the previously played map
+		Added support for a Game.ConnectTo argument which allows clients to direct connect to a server when game is launched
+		Helicopters now bob slightly in flight
+		Bots now repair their own buildings
+		Fixed a bug where bots would be unable to set rallypoints for production buildings
+		Bots now maintain a level of aggro on enemy units
+		Made SpawnMPUnits' initial unit configurable
+		Added a dropdown list in the map editor for setting an actor's owner upon placement
+		Replaced the server browser with a new and awesome one
+		Fixed a bug where infantry squish sounds weren't positioned
+		Fixed a bug where actor priority wasn't correct for doubleclick
+
+	Red Alert:
+		Fixed a crash which occurred when playing an online game with Hard AI
+		Fixed a bug where planes could stack more than 1-per-airfield
+		Fixed a bug where planes would not rearm at airfields
+		Improved logic for sending planes and helicopters back to base
+		Changed MIG to fire 2 missiles per burst instead of 4
+		Changed HELI (longbow) to fire missiles in bursts of 2
+		Added a Show Shellmap setting
+		Changed team color picker to match C&C's
+		Fixed a bug where infantry could not pass over anti-tank mines, and vice versa
+		Fixed a bug where the shellmap would reload unnecessarily when disconnecting from a lobby that hasn't started
+		Added AutoTarget capability to submarines, but they are set to HoldFire stance by default
+		New Map: Bombardment Islands (Sprog)
+		New Map: Engagement (Nukem)
+		New Map: Man to Man (Nukem)
+		New Map: Asymetric Battle (Seru)
+	C&C:
+		Changed the bot spawn picker to match RA's
+		Reduced delay of tooltips
+
+20111013:
+	Engine:
+		Fixed broken client IDs if players drop before the game starts
+		Converted FileExtractor into --extract cmdlet for Utility.
+		Added --transparent option to --png cmdlet in Utility.
+		Fixed shortcut description on Linux
+		Fixed launcher crashes on Mac
+		Removed obsolete SequenceEditor tool
+		Added --tmp-png cmdlet in Utility, to convert terrain to PNG.
+	Both Mods:
+		Allow building repair by allies
+		Use player color to show who is repairing a building
+		Only units/structures being built or queued are shaded in the production palette
+		Aircraft smoke is no longer visible under fog
+		Added a Show Grid option to the Map Editor
+		Added multitap support - double clicking a unit selects all units of the same type on screen
+		Changed map choosers to be a filterable grid of maps
+		Added internal machinery for IFV-style units
+	Red Alert:
+		Added naval transport
+		Added an indicator over powered down buildings
+		Aircraft crashing into water now use large_splash
+		Destroyer now requires Radar Dome
+		Increased cost of Shipyard and Sub Pen
+		Fixed a crash when sending aircraft back to base
+		Husks no longer interfere with selection
+		Added more options for bots in game lobby
+		Changed AI behavior -- now has Easy/Normal/Hard difficulty
+		Increased range of FTUR by 1
+		Reduced cost of MEDI from 500 to 300
+		Reduced cost of SHOK from 800 to 500
+		Heavy vehicles (Tanks, Harvesters, MCV) now crush infantry
+		New map: Classic DropZone (Holloweye)
+		New map: DropZone Battle of Tikiaki (Knivesron)
+		New map: DropZone W (Riderr3)
+		New map: Seven Stairs (Tirili)
+		New map: Contact (Nukem)
+		New map: Encounter (Nukem)
+		New map: Mass Confliction (Nukem)
+		New map: Calm before the Storm (Nukem)
+		New map: Baywatch (Nukem)
+		New map: Winter Warzone (Nukem)
+		New map: Paramount (Nukem)
+		New map: Doubles (Nukem)
+		New map: Hectic (Nukem)
+		New map: Pandemonium (Nukem)
+		New map: Chokepoint (Nukem)
+		New map: HotZone (Nukem)
+		New map: No Fly Zone (RAGEQUIT)
+		New map: Strip Mine (RAGEQUIT)
+		New map: Doughnut Hole (RAGEQUIT)
+		New map: Vegetation (hamb/Chris Forbes)
+		New map: Arctic Triangle Affair (Bellator)
+		New map: Mad Scramble (Bellator)
+		New map: Free Coasts (Ihptru)
+		New map: Battle Lake (Bellator)
+	C&C:
+		Slightly increased Tiberium growth rate
+		Increased harvester unload time
+		Reduced Tiberium value by 20%
+		Changed FTNK armor type to Light
+		Fixed tank squish animations to show properly
+		New map: Tiberium Oasis (Bellator)
+
+
+20110906:
+	Engine:
+		Fixed compile failures under Windows
+		Improved platform detection
+		Modding support for custom fonts
+		Video memory leaks fixed
+		Improved error messages for unsupported graphics cards
+		Improved support for Intel graphics cards
+		Fixed incorrect resolution under some Linux systems
+		Write graphics.log on all graphics-related errors
+		Significant general performance improvements
+		Fix crashes when joining a game with no free player slots
+		Bots players are named after their AI type and pick better random colors
+		Map support for enforcing team and spawn choice
+		Fix resource-clearing weapons breaking custom terrain types (bridges)
+		Added a "Pixel double" mode to draw the world at 2x zoom.
+		Fixed broken mounting of map packages
+		Fixed crashes when loading broken maps
+		Fixed units being left alive but stranded on destroyed bridges
+		Fixed husks being created on water
+		Fixed AttackMove trying to send orders to units owned by others
+		Made LaserZap more flexible for modders
+	Both C&C and Red Alert:
+		Fixed desync when a player surrenders
+		Fixed installing from CD
+		Added Hotkey support:
+			escape to toggle ingame menu
+			escape to go up a level in menus / cancel prompts
+			return to confirm prompts
+		Changed shortcut for adding units to groups changed from ctrl->cmd on OSX to avoid conflicting with Spaces
+		Fixed Tooltips for spectators
+		Fixed cashticks when selling walls
+		Fixed show explosions when walls are sold
+		Fixed veteran units not repairing correctly at service depots
+		Fixed Rally-point color when a building is captured
+		Fixed selection box dragging behind ui elements
+		Added Mod support for passengers that take multiple slots
+		Added Mod support for custom tesla zap effects
+		Fixed desync when a support aircraft is killed after completing its task
+		Fixed bugs with selling refineries
+		Fixed superweapons being fired from disabled structures when multiple are available
+		Added "Mission Accomplished" / "Mission Failed" notifications when you win or lose a multiplayer game
+		Fixed husks jumping to the middle of a cell when a unit dies
+		Fixed decloak sound never being used
+		Improved HackyAI power management
+	C&C:
+		Completely overhauled UI
+		Added support for installing from original game disks
+		Added support for installing music from original game disks
+		Added support for Covert Ops music tracks
+		Added Skirmish mode (creates a local game against bots)
+		Added Configurable bot race/team/spawns
+		Fixed Rocket Launcher turret raising/lowering when attacking
+		Added muzzle flashes to Guard Tower / SAM site
+		Fixed firing offsets on all units and structures
+		Fixed Ion Cannon cursor
+		Fixed Apache artwork
+		Fixed uncapturable oil derricks
+		Added capturable Biolab tech structure: allows you build viceroids
+		All vehicles leave husks on death
+		Server/Skirmish creation selects the last played map by default
+		New animations for cloak and reveal map crates (from C&C Sole Survivor)
+		Added 8 new maps by Petrenko
+		Tweaked most existing maps
+		Removed East vs West 2 map
+		Fixed Harvester/Refinery docking animation beneath the fog of war
+		Improved Obelisk laser effect
+		Added a blue pip for harvested blue tiberium
+		Changed the Refinery tower lights to indicate the amount of stored tiberium
+		Fixed an exploit with Nod airfields on the right side of the map
+		Fixed bot color being saved as player color in lobby
+		Balance changes:
+			Refinery footprint changed, price decreased to $1500
+			Flame tank explodes on death, damage reduced by 40%
+			Stealth Tank damage increased, speed decreased
+			Rocket Launcher now fires 6 rockets, loses AA
+			Orca / Apache weapons reworked. Both now have limited volleys, but reload in the air. Both can attack other air units
+			APC weapons reworked. Now has a turret, but can attack air units only
+			Artillery given back to Nod
+			SSM launcher removed from Nod
+			Concrete walls require vehicle production to build
+			MCV, Harvester, Engineer can no longer level up (via crates)
+			MCV can no longer receive Cloak crates
+			Advanced Guard Tower range increased
+			SAM Site range decreased
+			Bridge HP halved
+			Infantry tiberium avoidance factor increased by 5x
+			Decrease tiberium damage to infantry
+			Rebalanced tiberium value / harvester capacity / harvesting speed
+			Reduced Grenadier death damage
+			Mammoth tank regen rate halved, Missile reload rate decreased
+			Building repair speed, price doubled
+			Recon Bike damage increased 16%
+			Infantry can be crushed by tanks
+			Removed build area radius around tech structures
+	Red Alert:
+		Fixed firing offsets on Flame trooper / Tesla trooper / Telsa tank / Tesla coil / Flame turret
+		Fixed bounties using incorrect unit value
+		Fixed parachute offsets
+		Added muzzle flashes to Pillbox / Camo Pillbox / SAM Site
+		Fixed map reveal when an ally is granted GPS
+		Added 16 new maps by buddha, hamb, seru
+		Fixed bounties of $0 displaying
+		Removed 3 obsolete maps
+		Fixed Minelayers not entering the Service Depot properly
+		Fixed Hind, Yak weapons being blocked by walls
+		Fixed phantom radar bin on subsequent games
+		Added new Oil Derrick artwork
+		Added support for Counterstrike & Aftermath music tracks
+		Added player color to diplomacy panel
+		Added capturable oil refinery tech structure
+		Added new harvester artwork for half-empty/empty states
+		Added new MCV husk artwork
+		Fixed spy disguise not working
+		Fixed hellfire missiles splashing back against helicopters
+		Fixed animation speed for Grenadier idle animations
+		Removed Lock Teams option
+		Fixed cursor while dragging selection box
+		Fixed accidental order issuing while dragging selection box
+		Fixed lobby "kick" buttons
+		Balance changes:
+			Medic cost reduced to $500
+			Mines are visible to friendlies and spectators
+			Friendly units don't trigger mines
+			Increased reload rate for aircraft
+			Missile sub submerge delay doubled, damage decreased by 25%
+			Longbow now requires Allied Tech Center
+			Reduced wall health
+			Increased cruiser accuracy
+			Increased Longbow missile speed by 50%
+			Increased SAM Site rate of fire
+	Utility:
+		Fixed --png mode for converting shp -> png
+	Editor:
+		Fixed actor rendering on OSX / Linux
+		Fixed crash relating to incorrect mix file location
+
+20110511:
+	Engine:
+		Fix hotkeys firing on both key down and key up
+		Allow C4 delay to be configurable
+		Text field support for home and end keys
+		Fix world actor being owned by Creeps player (causing Neutral to be hostile) on new maps
+		Include gpu vendor string in graphics.log for unsupported cards
+		Fix crash with some aud files
+		Fix a rare crash when a repairing building is killed
+		Improvements to HackyAI
+		Generalize capture logic to work for any actor types
+		Support RA2-style missile trails
+		Fix helicopters failing to attack targets in some situations
+		Fix 'exploit detected' when using hotkeys on another players units
+		Relinquish spawn point in the game lobby when entering a spectator slot
+		Fix maps with >8 spawnpoints in the game lobby
+		Yaml loader crashes correctly when trying to inherit from a nonexistant actor
+		Yaml loader crashes correctly when trying to remove a nonexistant trait
+		Modding support for multiple player palettes
+		Fix several crashes when installing packages
+		Many other general engine improvements
+	C&C:
+		Fix Viceroid target-scan radius
+		Fix map-placed SAM-sites not being able to attack
+		Commando voice clip when built
+		Commando voice clip after kills
+	RA:
+		New unit: Supply truck for donating funds to another player
+		Pilots (sometimes) parachute from shot down planes
+		Bounties on killed units
+		Use RA2 style missile trails
+		New GPS logic
+		New map: Pressure by seru
+	Packaging:
+		Utility writes a log to support dir when crashing
+		Support for Ubuntu 11.04
+		Fix osx crash when run from a path with spaces
+
+20110320
+	Engine:
+		Display range circles when placing defenses
+		Support a hostile creeps player for viceroids / dinosaurs / ants / etc
+		General refactoring and performance fixes
+		Stop/Scatter/Deploy orders give audio feedback
+		"Allow cheats" option moved into the game lobby, visible to all players
+		"Build anywhere" developer mode option
+		Improved pathfinding when collecting crates or crushing walls.
+		Refactor idle / prone infantry animations
+		Improve missile trail effects
+		Actors without health are not considered as dead
+		Health bars show recent damage as it is inflicted
+		Production structures and special powers show selection bars showing progress
+		Mouseover units to display healthbars etc
+		Fix shroud glitch when units exit transports
+		Fix bots jamming up their production structures
+		Direct connect will assume port 1234 if none is given
+		Chrome image mapping definitions changed from xml to yaml
+		Water explosion animations are not used for airborne explosions over water
+		Fix rendering of very large maps
+		Report GPU memory usage to debug.log
+		Massive improvements in repeated allocation / deallocation of memory
+		Fixed a desync with repairing buildings
+		Fixed a desync with aircraft (it now crashes deterministically instead)
+		Fixed a desync with KOTH maps
+		Fixed a bug where a slot is shown as closed when it contains a bot
+		Fix crash when spawning map actors owned by a nonexisting player
+		Fix crash when changing mod while playing music
+		Fix crash with perf graph
+		Fix crash in replay viewer if replays directory doesn't exist
+		Fix crash when selling civilian buildings
+		Fix crashes caused by blank game title / direct connect server textfields
+		Oil derricks, harvester unloading, selling structures shows cash indicator
+		Prerequisites system refactoring to allow non-building prerequisites
+		Fix shift+tab not cycling the build tabs
+		Fix bogus keyboard input in text fields
+		Don't change mods if the same one is selected in the dropdown
+		Support for remapping the control group addition modifier (ctrl) to any modifier key
+		Fix helicopters flying 1 cell off the right or bottom of the map
+
+	C&C:
+		Viceroids! Infantry killed by tiberium or chem warriors may turn into viceroids
+		Fixed death animations
+		Blue tiberium damages infantry
+		Map-placed SAM sites start closed
+		Engineers capturing enemy buildings gives enemy tech
+		Buildings emit minigunners and engineers when sold (no more technicians / civilians)
+		Civilians panic when attacked
+		Fix a rare crash with harvester docking
+		Fix a rare crash with stealth tank
+		New Map: East vs West 3 by pchote
+		Removed Maps: Wargames, Yellowstone II
+		Oil Derricks have a small sight range
+		Apaches have a muzzleflash
+	
+	RA:
+		Service depots repair units faster
+		Fix crash when telling a minelayer to create an empty minefield
+		Fixed interior tileset boxes
+		New Map: Styrian Mountains by ReFlex
+		New Map: Convergence by Arcturus
+		Updated Map: Seaside by nudalz
+		Longbow ammo increased from 6 to 8, description fixed
+		Hind cost decreased from 1500 to 1000, hp increased from 100 to 150, range decreased from 12 to 10
+		Service depot cost increased to from 700 to 1000
+		Radar dome cost increased from 1000 to 1400
+		Artillery now requires war factor and radar dome, inaccuracy decreased from 80 to 40
+		APC moved from Allies to Soviets, hp increased from 200 to 300, price increased from 800 to 850
+		Medium / Heavy / Mammoth tanks now require service depot to build
+		Heavy tank cost reduced from 1200 to 1150
+		Flame turret rate of fire increased from 45 to 65, fires 2 bursts
+		AA guns, flak trucks can now fire over walls
+		Jeeps can carry a single passenger
+		Base defenses no longer provide ground control
+		Vehicle speed on clear ground increased, speed on ore reduced
+		Grenadiers have a 50% chance of exploding when killed
+		Spys are ignored by enemy units when disguised, tooltips show as disguised unit
+		Fix crates being paradropped inside trees, buildings
+		Production hotkey for flame turret changed to t, tesla coil to u
+		Disguised spys now appear correctly on radar and tooltips
+		Fix GPS behavior when alliances change.
+		Aircraft now fly to a target location and circle instead of returning to base
+		Aircraft no longer fly off the map if their Airfield is destroyed
+
+	Editor:
+		New map format (version 5). Maps < Version 4 are no longer supported by the editor or game.
+		Waypoints and MP start locations are now actors
+		Importing C&C/RA maps fixed
+		New png loader to support future tools
+		Editor uses the correct icon under mono
+		Editor only saves non-default values for PlayerReferences in map files
+		Default player colours has been returned to neutral grey.
+		Maps can be loaded from the commandline
+		Option to show actor names
+		Support for veteran / elite actors to be defined in the map yaml
+	
+	Packaging:
+		Rename .deb package to use debian naming conventions
+		Improve linux package installation / elevation prompts (uses zenity, require mono >= 2.6.7)
+		Fix package installation crash on windows xp
+		Windowed mode now launches in the center of the screen under Windows
+
+20110207
+	Engine:
+		Informative drop messages - user is notified of kick vs game has started vs server unavailable
+		Fixed render errors with the build palette on the first game tick
+		Improved sync check performance
+		Shp writing capabilities for mod tools
+		Fixed desync due to floating point calculations in unit facing
+		Fixed idle animations
+		Removed launchers on all platforms
+		Asset download/install is now performed ingame
+		Mod selector is now available from the main menu
+		Fixed `lock teams' checkbox
+		Lots of misc. engine refactoring
+		Fixed exploit allowing stance changes when teams are locked
+		Fix crash when capturing last enemy silo
+		Fix units continuing to attack a building after it has been captured
+		Fix floating point issues with missiles (manifests as broken torpedos in ra)
+		Fix location calculation for flying units (manifests as invincible helicopters in cnc)
+		Infantry stack 5-to-a-cell like the original games
+		Craters and scorches smoke for a limited time
+		Added a scatter key (bound to `x')
+		
+	C&C:
+		Fixed commando c4
+		Fixed Airfield production notification ("Reinforcements have arrived")
+		Fixed palette bugs with Oil Derricks and walls
+		Fixed tech tree bugs after capturing enemy productions structures
+		"Repairing" eva
+		Proper "pop up" SAM sites. Closed SAMs receive a 50% armor bonus.
+		SAM sites require power to operate
+		Advanced Guard Tower requires power to operate
+		Support structures no longer grant build radius
+		Lower Barracks/Hand health
+		Increase Weapons Factory health
+		Increase rocket bike damage
+		New Map: Crossing the Rubicon (Arcturus)
+	
+	RA:
+		Game assets can be installed from one of the Red Alert cds
+		"Repairing" eva
+		GPS is now shared between allies
+		Submarines are no longer visible to everyone
+		Fixed paradrop flare, spyplane from capturing KOTH points
+		New Map: Nuclear Winter (nudalz)
+		New Map: Seaside (nudalz)
+	Editor:
+		Ability to switch mods after launch
+		Refactor hardcoded tools into a generic interface
+
+
+20110109
+	Launchers:
+	    New GTK based launcher for linux.
+	    Mod version, version check, and MOTD moved from the main menu into the launchers.
+	    Fixes for non-standard mono installations under OSX.
+	    Fixes for filepaths with spaces under OSX.
+
+	Map Editor / Maps:
+	    Fixed crash when using floodfill.
+	    New map format (version 4). Open and resave maps with the editor to upgrade them.
+	    Added support for compressed (.oramap or .zip) maps.
+	    Removed .uid files from maps -- compute the hash on demand now.
+
+	General:
+	    Mod versions are checked when joining a server. Clients with a different game version / wrong mods will not be able to join.
+	    Added 'Stop' command on 'S'.
+	    Stop units from autotargeting walls.
+	    Added different pip colour for gems vs ore.
+	    Fixed several exploits in support powers.
+	    Continue to show selected units when firing special powers.
+	    Fixed palette effects (nuke, chronoshift) being applied to fog / shroud.
+	    Added a replay viewer.
+	    Fixed building previews being rendered below bridges.
+	    Forced the AI to leave gaps between its buildings.
+	    Fixed captured buildings still drawing power from the original owner.
+	    Fixed various crashes in the editor when trying to make a new map.
+	    Support multiple bot types; added another bot difficulty.
+	    Removed option to not save syncreports.
+	    Fixed desync related to aircraft.
+	    Fixed sync not being checked on World traits.
+	    Pick a random available door on production structures with more than one (barracks, subpens, etc).
+	    Fixed some rare Harvester-related crashes.
+	    Added labels to the perf graph.
+	    Locked teams by default.
+	    Fixed "No games found" not being displayed when there was an in-progress (hidden) game detected.
+	    Added support for multiple shellmaps. Chooses randomly.
+	    Fixed dropdowns possibly getting stuck open when the host force-starts the game.
+	    Improved scrollpanels - added scrollbars and mousewheel support.
+	    Fixed potential desyncs in building refund calculation and unit repair.
+	    Added black outline to text drawn over the world, so it can be seen in all cases.
+	    Many performance improvements.
+
+	C&C:
+	    Fixed footprint of ATWR.
+	    Improved harvester docking.
+	    Made Oil Derricks capturable.
+	    Fixed nuke detonation sound.
+
+	RA:
+	    Fixed Tanya not having the correct pip color.
+	    Fixed helicopters spawning in the wrong place.
+	    Fixed Spy-related crashes when disguising as civilians.
+	    Allow using C4 on friendly buildings.
+	    Improved harvester docking.
+	    Added proper shareable/revokable GPS.
+	    Nerf 1tnk hard.
+	    Increase cost of 2tnk slightly, but increase its HP too.
+	    Require power to operate SAM sites.
+	    Fixed missing tooltips for SHOK and TTNK.
+	    Fixed chronoshift power requiring two clicks to cancel.
+	    Fixed desync related to chronoshift.
+	    Fixed bogus bottom-left spawnpoint on Central Conflict.
+	    Production tabs with an item ready now light up yellow.
+	    Fixed crash when a WEAP is half-destroyed before it finishes deploying.
+
+
+20101202
+	General:
+	    New launcher for Windows and OS X (Linux coming in a later release) for downloading and installing mods, and launching the game.
+	    Disable Surrender button when you win or lose.
+	    Fix Minimap orders outside viewport.
+	    Render building previews when placing a structure.
+	    Buttons offset their contents when pressed.
+	    Dropdown listboxes in the game lobby and diplomacy panel.
+	    Allow moving the cursor and editing anywhere in textfields.
+	    Don't render things outside the map.
+	    Render selection boxes / health bars, target lines above everything else
+	    Show "cannot move here" cursor when mousing over invalid terrain under the fog, or outside the map.
+	    Remove move flashes (they are obsoleted by target lines).
+	    Buildings are always visible under fog.
+	    Captured refineries no longer give cash to the original owner.
+	    New rally point artwork.
+	    Fix broken airstrike / parabomb special powers.
+	    Fix diplomacy cycling shroud exploit.
+	    Change the .rpm package to target Fedora.
+	    Fixed idle animations
+
+	RA:
+	    Added "A Path Beyond" map
+	    Fix crash when selling iron curtained buildings.
+	    Don't stack multiple Invuln render effect on an actor.
+	    Fix exploit in Iron Curtain, Chronosphere, Nuke.
+	    Fix paradrop flare remaining forever if drop plane is killed.
+	    Area of effect Iron Curtain.
+	    Area of effect Chronoshift.
+	    Remove sandbag in water of "Equal Opportunity" map.
+	    Allow chronoshifted and paradropped units to collect crates.
+	    Fixed medic crash.
+	    Removed end of game crash.
+	    Fix dog attack.
+	    Missile silo requires power but can be powered down.
+	    Fix shellmap low power and invalid gap generator position.
+	    Removed Naval Transport until it's cargo capabilities are fixed
+
+	CNC:
+	    Fix exploit in Ion Cannon, Nuke.
+	    Add some basic scripting to the shellmap.
+	    Fix invulnerable stealth tanks.
+	    Oil derricks spurt fire when killed.
+	    New load screen (unfinished).
+	    Fix observers.
+	    Helicopters automatically target enemy units
+
+	Engine:
+	    Refactored Orders to use less network bandwidth and remove duplication.
+	    Dump available extensions to graphics.log when GL Renderer fails to init.
+	    Fix Makefile constantly rebuilding, and refactor for readability.
+	    Display soft shroud around edge of map instead of hard border.
+	    Standardise engine naming of Theatre -> Tileset.
+	    Refactor map size queries to all use Map.Bounds.
+	    Move all widget delegate into the RA mod dll.
+	    Renamed ListBoxWidget -> ScrollPanelWidget.
+	    Fix ScrollPanelWidget scrolling beyond the start by 1 velocity tick.
+	    Removed duplication from target lines.
+	    Extensive refactoring of shroud.
+	    Refactor Scale trait to a property on Render*.
+	    Refactor idle behavior
+
+
+20101121-2
+	Bug fixes:
+	    Fixed Tesla causing an out of memory exception
+	    Fixed Tesla animations.
+	    All players can now see AI players in lobby.
+	    Weapon factory sell animation now plays correctly.
+	    Utility app now extracts downloaded content packages properly.
+	    Fixed helicopters landing in silly places.
+
+	New Features:
+	    New default renderer using GLSL instead of CG. Removes the dependency on the CG toolkit and fixes issues with Radeon graphics cards using latest drivers.
+	    Order queuing with <shift>
+	    Unlimited power option in dev mode.
+	    New King of the Hill game mode with two maps: Crossroads and Island Hoppers
+	    Smoke trails for damaged aircraft.
+
+
+20101107
+    Fix Engineer/Tanya/etc refusing to enter buildings in 2010-11-06.
+
+
+20101106
+	Bug Fixes:
+	    Fix crash when hosting a second game.
+	    Fixed exploit where you could place a building anywhere.
+	    Fix aircraft, infantry becoming invincible in some circumstances.
+	    Fix a common aircraft desync.
+	    Unmuted the shellmap; it's now at 25% volume.
+
+	Balance Changes:
+	    reduce cooldown on Chronosphere to 2 minutes (was 4 minutes)
+	    reduce cooldown on Iron Curtain to 2 minutes (was 6 minutes)
+	    reduce invulnerable time on Iron Curtain the 30 seconds (was 45 seconds)
+	    reduce anti-ground damage of rocket soldier to 50 (was 60) and anti-air damage to 40 (was 50)
+
+
+
+20101025
+    Fix crash in C&C when harvesters return to the refinery (sorry guys)
+    Fix crash in both mods when transports unload
+    Fix ore/tiberium growth not working correctly
+    Fix graphical glitches on screenshake, etc
+    Add contrails to RA planes
+    Added plane crashes in RA
+    Added explosions on impact for all RA aircraft
+    Added more scripting to the RA shellmap
+    Fix Tesla not doing the correct amount of damage
+    Lots of internal cleanup
+
+
+
+20101023
+	New C&C Maps:
+	    Into the River Below (6p)
+	    Algernon (4p)
+	    Wargames (4p)
+	    Yellowstone II (4p)
+
+	Bug Fixes:
+	    Client disconnects no longer "double-quit".
+	    Units can no longer move over certain water tiles.
+	    Checks for destroyed actors to ensure they don't try to perform actions after death.
+	    Loose files in mod folders take priority over ones in .mix packages.
+	    Fixes for syncing in replays.
+	    Fix Iron Curtain.
+	    Fixes for units entering a building from the east or south
+	    MOTD no longer spits out garbage when behind a proxy needing web authentication.
+
+	RA Balance Tweaks:
+	    Airfield cost reduced from 1100 to 300
+	    Yak cost increased from 800 to 1000
+	    Mig cost increased from 1200 to 2000
+	    Helipad cost reduced from 1500 to 300
+	    Longbow cost increased from 1200 to 2000
+	    Hind cost increased from 1200 to 1500
+	    Anti-air gun range increased from 6 to 10, spread increased from 3 to 5
+	    Flack truck range increased from 6 to 8, spread increased from 3 to 5
+
+
+20101017
+    Fix crash when repair indicator was visible, but the building got destroyed or sold
+    Fix crash if an actor got destroyed twice (blown up & sold, etc)
+    Fix putting units back in BADR and C17.
+    Fix C&C crates being invisible
+    Fix bogus overlapping of MINE with ore trucks
+    Add MCV, napalm, nuke crates to C&C.
+    Fix "(dead)" tags in chat
+    Mute shellmap combat
+    Fix FMV player
+    Fix bug in voice system which made it impossible to add extra sides (thanks raminator)
+    Fixed bogus Missile Silo cameo from RA
+    Fixed engineer goldwrench cursors being reversed
+    Add support for actors that give the owner a small flow of cash (to be used with Oil Derricks)
+    Make teamchat toggle more flexible
+    Fix cloakable units being untargetable while uncloaked (thanks pdovy)
+    Fix crash when clicking `repair` with no MCV
+    Fix unit crates spawning in inappropriate places
+    Updated 'The Sentinel' map
+    Add base cycling (backspace) in C&C (it previously worked only in RA)
+    Fix planes getting stuck on the edge of the map
+    Fix explosions in air being drawn at ground level
+    Allow map slots to disallow bots
+    Allow map slots to enforce race/color selection
+    Replace C&C LST art (thanks, KatzSmile)
+    Push HackyAI setup into system.yaml, fix HackyAI for C&C
+    Reduce effectiveness of RA GUN vs unarmored
+    Improved mod content download infrastructure for Linux
+    Nerf C&C Orca slightly
+    Nerf speed of C&C bggy/jeep/bike/apc
+    Add new C&C 1v1 map: 'Chokepoint' (thanks Tiberian)
+    Reduce bandwidth usage in multiplayer (1/2)
+    Fix version string showing up twice in bottom-right corner after a game
+    Buff arty damage slightly
+    Nerf V2 reload slightly
+    Add trails to C&C SAM missiles
+    Increase speed of most C&C AA missiles
+    Reduce power requirement for RA AFLD from 50 to 20
+
+
+20101013
+    Fix crash when ordering a helicopter to move while it was falling out of the sky
+    Add blue tiberium
+    Fix aircraft not showing up on radar
+    Fix canceling of production not quite working (would cancel 2 if one was half-built)
+    Fix base-cycling for mac
+    Fix leaks between shellmap world and ingame world
+    Fix crash when the network connection is lost
+    Run the shellmap behind the lobby
+    Fix host not being able to teamchat
+    Declaring war automatically breaks the alliance in both directions
+    Aircraft can attack from their airfields correctly now
+    Attack move added ('A' and then left-click)
+    Add Tiberian's 'The Sentinel' 1v1 C&C map
+    Show the server name in the lobby dialog title
+    Random actually means random
+    Fix crash when destroying a Refinery with docked harvester
+    Add pchote's 'Tundra' 1v1 C&C SNOW! map
+    Lots of internal engine improvements
+
+
+20101009
+    Fix 64bit Linux compatibility
+    Nerf C&C Attack Bike
+    Show mod info in server browser
+    Show MOTD in the main menu
+    Fixed exploit with selling walls
+    Fixed auto-attack not working properly
+    Add an example mod, which adds a single unit to RA.
+    Fix dogs eating walls
+    Fix crash on destroying ore storage buildings
+    Fix Obelisk missing moving target
+    Ban cloak crates for infantry
+    Add nuke "bad" crate
+    Prevent aircraft from firing while landed
+    Reduce nuke charge time from 13min to 9min
+    Reduce parabombs charge time to 1min
+    Add support for minimum ranges on weapons
+    Add support for excluding specific actor types from picking up certain crates
+    FIx silent nukes in RA if they didn't hit a building
+    Fix all AI players getting the same color
+    Fix AI players getting the same team setting as the host
+    Fix AI attacking each other
+    Prevent most awful-looking colors
+    Remove most of the debug spam for aircraft
+    Increase construction yard health (50% in RA, 25% in CNC)
+    AI players now build defenses
+    AI players no longer attack with medics (e1/e2/e3/1tnk/2tnk/3tnk)
+    Much improved order targeting system
+    Add crash animations for helicopters
+    Nerf Hind chainguns
+    Reduce cost of Cruisers from 3.2k to 2.4k
+    Fix CNC airdrop planes getting stuck if the Airfield goes away
+    Fix phantom voices for dead units in control groups
+    Fix dogs sometimes not killing infantry
+    Fix scroll jumping if opposite scroll inputs were applied
+    Fix bogus targeting lines being drawn to 0,0 sometimes
+    Fix VS2010 compatibility
+    Fix the game getting screwed up when people leave
+
+
+20101002
+    Fix various crashes
+    Fix CNC AI never building anything (it's still crap, but at least it does *something*)
+    Added shader fallbacks for Cg-2.1
+    Fix editor crashing on File->Open on Windows
+    Added scroll speed control (thanks, Gecko)
+
+
+20100922 through 20100922-4
+    Allow queueing of buildings when a building is ready to place
+    Change the pathfinder to use integers instead of floating point (fixes desync)
+    Create ui widgets on demand instead of at gamestart
+    Begin refactoring activity queuing for cleaner code
+    Reenable crates
+    Remove desync debug logging
+    Fix editor crash
+    Fix crash when a building being repaired is killed
+
+
+
+20100921 through 20100921-6
+    Add yet more logging to search for the packaged build desync
+
+
+20100920 through 20100920-7
+    Fix crash when building cnc weapons factory
+    Fix crash when harvester and refinery are killed by the same bullet (eg nuke)
+    Move several traits from engine into ra mod
+    Fix several editor bugs
+    Add a lot more logging to search for the packaged build desync
+
+
+20100919-2
+    Fix crash when un/deploying a damaged mcv
+
+
+20100919
+    Cache the power state of buildings for large performance gains
+    Changes to sync logging for large performance gains
+    Changes to shroud and ore rendering for large performace gains
+    Changes to renderer to fix several z-order bugs
+    Fix osx version string
+    Rename Repeat -> Loop in the music player
+    Fix team selection in the game lobby
+    Don't change production tab when selecting enemy structures
+
+
+20100918-2 through 20100918-4
+    Fix crashes in the map editor
+    Include menu and desktop shortcuts to the RPM package
+    Add debugging to track down a desync between packaged versions on .net vs packaged versions on mono
+
+
+20100918
+    Fixed lots of crashes
+    AI only tries to attack players that exist (and not itself)
+    Fixed speed of idle animations
+    Fixed exploit with A10 (infinite napalm)
+    Fixed exploits with remote building capturing/destroying
+    Added ability to change tilesize per-mod
+    Fixed delivering ore to an ally's proc
+    Fixed dog attacking ground forever (banned)
+    Fixed most z-order bugs
+    Fixed lots of editor usability problems
+    Fixed bogus XML generated by TSB
+    Added notification when cheats are used
+    Fixed exploit with reverse enter-transport order (didn't check if the passenger was compatible)
+    Fixed a bunch of techtree bugs
+    Fixed walkability of north rivermouth template in RA.
+    Added ability to export minimap as PNG from the editor
+
+
+20100914
+    Infantry idle sequences for ra mod
+    Enable music player by default (requires scores.mix to be installed manually)
+    Flak truck for soviets in ra mod
+    Give dog a selection voice
+    Only scroll when the game window is focused
+    Fixed cursor/order bugs (includes force-fire c4 on allied structures, harvesting ore under shroud, move orders for aircraft, etc)
+    Fixed a collection of crashes related to dead actors
+    Fixed broken rpm package
+    Create Debian packages
+
+
+20100910-2
+    Fixed attacking helipads
+    Deployed more mirrors
+    Added idle animations in C&C
+    Fixed an issue with the sidebar palette in C&C Desert
+    Integrated Jk's C&C Snow theater
+    Go back to classic C&C refinery model
+    Improve building explosions
+    Add nuke flash to C&C
+    Fix crash when losing FACT with a building ready to place
+    Remove unused MIX files
+    Add support for custom armor types
+    Adjust bounding boxes on vehicles
+    Windows installer prompts to install .NET if you don't have it
+    Windows installer remembers previous location for upgrades
+    Fix various crashes when refineries going away
+    Fix serious performace issue -- Actor leak when failing to spawn units
+    Add support for mobile production units
+    Remove splash damage from Tiberium
+    Fix a crash with actors dying with a projectile in-flight
+    Correctly clean up cargo when a transport dies
+    Fix client crash when the server disconnects
+    Right-clicking on a valid passenger with a transport loads cargo
+    Added zoom to editor
+    Convert sequences to yaml
+    Clean up the mod folders
+    Add a shellmap for C&C
+    Make pathfinder work with a MobileInfo rather than a live actor
+    Add a loadscreen for C&C
+    Correctly back up MIX files when upgrading windows installs
+
+
+20100907
+    Changed MiG prerequisites to AFLD+STEK
+    Removed KENN, build DOG directly from BARR now
+    Chronotank can only teleport when fully charged
+    Improved OpenGL error logging
+    Fixed targeting of FIX
+    Fixed crash when an engineer is trying to repair a building, but it dies/gets sold/etc.
+    Added muzzle flashes to Yak and Hind chainguns
+    Fixed bounding boxes on some units
+    Fixed accuracy of Tesla weapons
+    Changed ownership of GUN and GTWR in CNC to both
+    Fixed crash on destroying things that have a building reserved
+    If ordered to move to an unpathable cell, move somewhere nearby that is pathable instead
+    Fixed RPM linux package
+
+
+20100906-2
+    Shows game version in main menu screen for windows and linux
+
+
+20100906
+    Improvements to Render performance
+    Improved debugging for performance issues
+    "Give Exploration" developer-mode option
+    Check for .net framework on windows install
+    Allow the viewport to scroll past the map edge to prevent ui from blocking buildings

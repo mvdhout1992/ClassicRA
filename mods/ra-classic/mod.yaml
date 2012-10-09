@@ -1,0 +1,122 @@
+Metadata:
+	Title: Red Alert Classic
+	Description: Mod closely resembling the original Red Alert
+	Version: v0.1
+	Author: Iran
+
+Folders:
+	.
+	./mods/ra-classic
+	./mods/ra-classic/bits
+	./mods/ra-classic/uibits
+	./mods/ra-classic/packages
+#	~^/Content/ra
+
+Packages:
+	~main.mix
+	redalert.mix
+	conquer.mix
+	hires.mix
+	local.mix
+	sounds.mix
+	speech.mix
+	allies.mix
+	russian.mix
+	temperat.mix
+	snow.mix
+	interior.mix
+	~scores.mix
+	~movies1.mix
+	~movies2.mix
+
+Rules:
+	mods/ra-classic/rules/defaults.yaml
+	mods/ra-classic/rules/system.yaml
+	mods/ra-classic/rules/vehicles.yaml
+	mods/ra-classic/rules/structures.yaml
+	mods/ra-classic/rules/infantry.yaml
+	mods/ra-classic/rules/civilian.yaml
+	mods/ra-classic/rules/trees.yaml
+	mods/ra-classic/rules/aircraft.yaml
+	mods/ra-classic/rules/ships.yaml
+
+Sequences:
+	mods/ra-classic/sequences.yaml
+
+Cursors:
+	mods/ra-classic/cursors.yaml
+
+Chrome:
+	mods/ra-classic/chrome.yaml
+	
+Assemblies:
+	mods/ra-classic/OpenRA.Mods.RA.Classic.dll
+
+ChromeLayout:
+	mods/ra-classic/chrome/gameinit.yaml
+	mods/ra-classic/chrome/ingame.yaml
+	mods/ra-classic/chrome/mainmenu.yaml
+	mods/ra-classic/chrome/settings.yaml
+	mods/ra-classic/chrome/lobby.yaml
+	mods/ra-classic/chrome/map-chooser.yaml
+	mods/ra-classic/chrome/create-server.yaml
+	mods/ra-classic/chrome/serverbrowser.yaml
+	mods/ra-classic/chrome/replaybrowser.yaml
+	mods/ra-classic/chrome/dropdowns.yaml
+	mods/ra-classic/chrome/modchooser.yaml
+	mods/ra-classic/chrome/cheats.yaml
+
+Weapons:
+	mods/ra-classic/weapons.yaml
+	
+Voices:
+	mods/ra-classic/voices.yaml
+
+Notifications:
+	mods/ra-classic/notifications.yaml
+
+TileSets:
+	mods/ra-classic/tilesets/snow.yaml
+	mods/ra-classic/tilesets/interior.yaml
+	mods/ra-classic/tilesets/temperat.yaml
+
+Music:
+	mods/ra-classic/music.yaml
+	mods/ra-classic/music-cs.yaml
+	mods/ra-classic/music-am.yaml
+
+Movies:
+	mods/ra-classic/movies1.yaml
+	mods/ra-classic/movies2.yaml
+
+LoadScreen: RAClassicLoadScreen
+	InstallerMenuWidget: INSTALL_PANEL
+	TestFile: redalert.mix
+	PackageURL: http://open-ra.org/get-dependency.php?file=ra-packages
+
+ServerTraits:
+	LobbyCommands
+	MasterServerPinger
+
+ChromeMetrics:
+	mods/ra-classic/metrics.yaml
+
+Fonts:
+	Regular:
+		Font:FreeSans.ttf
+		Size:14
+	Bold:
+		Font:FreeSansBold.ttf
+		Size:14
+	Title:
+		Font:titles.ttf
+		Size:48
+	BigBold:
+		Font:FreeSansBold.ttf
+		Size:24
+	Tiny:
+		Font:FreeSans.ttf
+		Size:10
+	TinyBold:
+		Font:FreeSansBold.ttf
+		Size:10

@@ -1,0 +1,322 @@
+CONYARDH:
+	Inherits: ^CONYARD
+	Buildable:
+		Owner: harkonnen
+	Transforms:
+		IntoActor: mcvh
+		Offset:1,1
+		Facing: 270
+
+PWRH:
+	Inherits: ^POWER
+	Buildable:
+		Prerequisites: conyardh
+		Owner: harkonnen
+
+REFH:
+	Inherits: ^REFINERY
+	Buildable:
+		Prerequisites: pwrh
+		Owner: harkonnen
+	RenderBuildingWarFactory:
+		Image: REFH
+	FreeActor:
+		Actor: HARVESTERH
+		InitialActivity: FindResources
+		SpawnOffset: 1,2
+		Facing: 64
+
+HARVESTERH:
+	Inherits: ^HARVESTER
+	Buildable:
+		Prerequisites: heavyh,refh
+		Owner: harkonnen
+	RenderUnit:
+		Image: HARVESTER
+
+HARVESTERH.starport:
+	Inherits: HARVESTERH
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporth
+	Valued:
+		Cost: 895
+
+TRIKEH:
+	Inherits: ^TRIKE
+	Buildable:
+		Prerequisites: lighth
+		Owner: harkonnen
+	RenderUnit:
+		Image: TRIKE
+
+TRIKEH.starport:
+	Inherits: TRIKEH
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporth
+	Valued:
+		Cost: 149
+
+QUADH:
+	Inherits: ^QUAD
+	Buildable:
+		Prerequisites: lighth
+		Owner: harkonnen
+	RenderUnit:
+		Image: QUAD
+
+QUADH.starport:
+	Inherits: QUADH
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporth
+	Valued:
+		Cost: 295
+
+SIEGETANKH:
+	Inherits: ^SIEGETANK
+	Buildable:
+		Prerequisites: heavyh, radarh
+		Owner: harkonnen
+	RenderUnitTurreted:
+		Image: SIEGETANK
+
+SIEGETANKH.starport:
+	Inherits: SIEGETANKH
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporta
+	Valued:
+		Cost: 495
+
+MISSILETANKH:
+	Inherits: ^MISSILETANK
+	Buildable:
+		Prerequisites: heavyh
+		Owner: harkonnen
+	RenderUnit:
+		Image: MISSILETANK
+
+MISSILETANKH.starport:
+	Inherits: MISSILETANKH
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporth
+	Valued:
+		Cost: 599
+
+CARRYALLH:
+	Inherits: ^CARRYALL
+	Buildable:
+		Prerequisites: hightechh
+		BuiltAt: hightechh
+		Owner: harkonnen
+	RenderUnit:
+		Image: CARRYALL
+
+CARRYALLH.starport:
+	Inherits: CARRYALLH
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporth
+	Valued:
+		Cost: 999
+
+BARRH:
+	Inherits: ^BARRACKS
+	Buildable:
+		Prerequisites: pwrh
+		Owner: harkonnen
+
+GUNTOWERH:
+	Inherits: ^GUNTOWER
+	Buildable:
+		Prerequisites: conyardh
+		Owner: harkonnen
+
+ROCKETTOWERH:
+	Inherits: ^ROCKETTOWER
+	Buildable:
+		Prerequisites: radarh
+		Owner: harkonnen
+
+WALLH:
+	Inherits: ^WALL
+	Buildable:
+		Prerequisites: conyardh
+		Owner: harkonnen
+
+HIGHTECHH:
+	Inherits: ^HIGHTECH
+	Buildable:
+		Prerequisites: radarh
+		Owner: harkonnen
+
+RESEARCHH:
+	Inherits: ^RESEARCH
+	Buildable:
+		Prerequisites: radarh,heavyh
+		Owner: harkonnen
+
+PALACEH:
+	Inherits: ^PALACE
+	Buildable:
+		Prerequisites: researchh
+		Owner: harkonnen
+	NukePower:
+		Image: deathhandicon
+		ChargeTime: 540
+		Description: Death Hand
+		LongDesc: Launches a nuclear missile at a target location.
+		BeginChargeSound: HI_PREP.AUD
+		EndChargeSound: HI_DHRDY.AUD
+		SelectTargetSound: 
+		LaunchSound: HI_LAUNC.AUD
+		MissileWeapon: atomic
+		SpawnOffset: 10,0
+	CanPowerDown:
+	RequiresPower:
+	SupportPowerChargeBar:
+
+SILOH:
+	Inherits: ^SILO
+	Buildable:
+		Prerequisites: refh
+		Owner: harkonnen
+
+LIGHTH:
+	Inherits: ^LIGHT
+	Buildable:
+		Prerequisites: refh
+		Owner: harkonnen
+	RenderBuildingWarFactory:
+		Image: LIGHTH
+
+HEAVYH:
+	Inherits: ^HEAVY
+	Buildable:
+		Prerequisites: lighth
+		Owner: harkonnen
+	RenderBuildingWarFactory:
+		Image: HEAVYH
+
+RADARH:
+	Inherits: ^RADAR
+	Buildable:
+		Prerequisites: barrh
+		Owner: harkonnen
+
+STARPORTH:
+	Inherits: ^STARPORT
+	Buildable:
+		Prerequisites: radarh
+		Owner: harkonnen
+
+REPAIRH:
+	Inherits: ^REPAIR
+	Buildable:
+		Prerequisites: heavyh
+		Owner: harkonnen
+
+MCVH:
+	Inherits: ^MCV
+	Buildable:
+		Prerequisites: heavyh,repairh
+		Owner: harkonnen
+	Transforms:
+		Facing: 10
+		IntoActor: conyardh
+		Offset:-1,-1
+		NoTransformSounds: HI_DPLOY.AUD
+	RenderUnit:
+		Image: DMCV
+
+MCVH.starport:
+	Inherits: MCVH
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporth
+	Valued:
+		Cost: 1499
+
+COMBATH:
+	Inherits: ^COMBAT
+	Tooltip:
+		Icon: combathicon
+	Buildable:
+		Prerequisites: heavyh
+		Owner: harkonnen
+	RenderUnitTurreted:
+		Image: COMBATH
+
+COMBATH.starport:
+	Inherits: COMBATH
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporth
+	Valued:
+		Cost: 595
+
+DEVAST:
+	Inherits: ^Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 100
+		Prerequisites: repairh,researchh
+		Owner: harkonnen
+	Valued:
+		Cost: 1800
+	Tooltip:
+		Name: Devastator
+		Description: Big and slow tank.\n  Strong vs Tanks\n  Weak vs Infantry, Aircraft
+	Health:
+		HP: 900
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 3
+		Crushes: crate, infantry
+	RevealsShroud:
+		Range: 6
+	RenderUnit:
+	AttackFrontal:
+		PrimaryWeapon: 120mm
+		PrimaryLocalOffset: -4,-5,0,0,0, 4,-5,0,0,0
+		PrimaryRecoil: 4
+		PrimaryRecoilRecovery: 0.7
+	AutoTarget:
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+	LeavesHusk:
+	Selectable:
+		Bounds: 44,38,0,0
+
+SARDAUKAR:
+	Inherits: ^Infantry
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 110
+		Prerequisites: palaceh
+		Owner: harkonnen
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Sardaukar
+		Description: Heavy infantry.
+	Selectable:
+		Bounds: 12,17,0,0
+	Health:
+		HP: 150
+	Mobile:
+		Speed: 5
+	RevealsShroud:
+		Range: 6
+	TakeCover:
+	-RenderInfantry:
+	RenderInfantryProne:
+	AttackFrontal:
+		PrimaryWeapon: Vulcan
+		SecondaryWeapon: Dragon
+		PrimaryOffset: 0,0,0,-13

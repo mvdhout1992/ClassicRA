@@ -1,0 +1,80 @@
+Container@CHEATS_PANEL:
+	Logic:CheatsLogic
+	X:(WINDOW_RIGHT - WIDTH)/2
+	Y:(WINDOW_BOTTOM - 110)/2
+	Width:590
+	Height:145
+	Children:
+		Label@TITLE:
+			Width:590
+			Y:0-25
+			Font:BigBold
+			Contrast:true
+			Align:Center
+			Text:Cheats
+		Background@bg:
+			Width:590
+			Height:110
+			Background:panel-black
+			Children:
+				Checkbox@INSTANT_BUILD:
+					X:15
+					Y:15
+					Width:200
+					Height:20
+					Text:Instant Build Speed
+				Checkbox@ENABLE_TECH:
+					X:15
+					Y:45
+					Width:200
+					Height:20
+					Text:Build Everything
+				Checkbox@BUILD_ANYWHERE:
+					X:15
+					Y:75
+					Width:200
+					Height:20
+					Text:Build Anywhere
+				Checkbox@UNLIMITED_POWER:
+					X:200
+					Y:15
+					Width:200
+					Height:20
+					Text:Unlimited Power
+				Checkbox@INSTANT_CHARGE:
+					X:200
+					Y:45
+					Width:200
+					Height:20
+					Text:Instant Charge Time				
+				Checkbox@DISABLE_SHROUD:
+					X:400
+					Y:15
+					Height:20
+					Width:200
+					Text:Disable Shroud
+				Checkbox@SHOW_UNIT_PATHS:
+					X:400
+					Y:45
+					Width:200
+					Height:20
+					Text:Show Unit Paths
+		Button@CLOSE:
+			Key:escape
+			X:0
+			Y:109
+			Width:140
+			Height:35
+			Text:Close
+		Button@GIVE_CASH:
+			X:300
+			Y:109
+			Width:140
+			Height:35
+			Text:Give Cash
+		Button@GIVE_EXPLORATION:
+			X:450
+			Y:109
+			Width:140
+			Height:35
+			Text:Give Exploration

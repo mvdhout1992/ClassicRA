@@ -1,0 +1,330 @@
+CONYARDA:
+	Inherits: ^CONYARD
+	Buildable:
+		Owner: atreides
+	Transforms:
+		IntoActor: mcva
+		Offset:1,1
+		Facing: 270
+
+PWRA:
+	Inherits: ^POWER
+	Buildable:
+		Prerequisites: conyarda
+		Owner: atreides
+
+GUNTOWERA:
+	Inherits: ^GUNTOWER
+	Buildable:
+		Prerequisites: conyarda
+		Owner: atreides
+
+ROCKETTOWERA:
+	Inherits: ^ROCKETTOWER
+	Buildable:
+		Prerequisites: radara
+		Owner: atreides
+
+WALLA:
+	Inherits: ^WALL
+	Buildable:
+		Prerequisites: conyarda
+		Owner: atreides
+
+REFA:
+	Inherits: ^REFINERY
+	Buildable:
+		Prerequisites: pwra
+		Owner: atreides
+	RenderBuildingWarFactory:
+		Image: REFA
+	FreeActor:
+		Actor: HARVESTERA
+		InitialActivity: FindResources
+		SpawnOffset: 1,2
+		Facing: 64
+
+HARVESTERA:
+	Inherits: ^HARVESTER
+	Buildable:
+		Prerequisites: heavya,refa
+		Owner: atreides
+		BuiltAt: heavya
+	RenderUnit:
+		Image: HARVESTER
+
+HARVESTERA.starport:
+	Inherits: HARVESTERA
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporta
+	Valued:
+		Cost: 895
+
+TRIKEA:
+	Inherits: ^TRIKE
+	Buildable:
+		Prerequisites: lighta
+		Owner: atreides
+		BuiltAt: lighta
+	RenderUnit:
+		Image: TRIKE
+
+TRIKEA.starport:
+	Inherits: TRIKEA
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporta
+	Valued:
+		Cost: 149
+
+QUADA:
+	Inherits: ^QUAD
+	Buildable:
+		Prerequisites: lighta
+		Owner: atreides
+		BuiltAt: lighta
+	RenderUnit:
+		Image: QUAD
+
+QUADA.starport:
+	Inherits: QUADA
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporta
+	Valued:
+		Cost: 295
+
+SIEGETANKA:
+	Inherits: ^SIEGETANK
+	Buildable:
+		Prerequisites: heavya, radara
+		Owner: atreides
+		BuiltAt: heavya
+	RenderUnitTurreted:
+		Image: SIEGETANK
+
+SIEGETANKA.starport:
+	Inherits: SIEGETANKA
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporta
+	Valued:
+		Cost: 495
+
+MISSILETANKA:
+	Inherits: ^MISSILETANK
+	Buildable:
+		Prerequisites: heavya
+		Owner: atreides
+		BuiltAt: heavya
+	RenderUnit:
+		Image: MISSILETANK
+
+MISSILETANKA.starport:
+	Inherits: MISSILETANKA
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporta
+	Valued:
+		Cost: 599
+
+CARRYALLA:
+	Inherits: ^CARRYALL
+	Buildable:
+		Prerequisites: hightecha
+		BuiltAt: hightecha
+		Owner: atreides
+	RenderUnit:
+		Image: CARRYALL
+
+CARRYALLA.starport:
+	Inherits: CARRYALLA
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporta
+	Valued:
+		Cost: 999
+
+BARRA:
+	Inherits: ^BARRACKS
+	Buildable:
+		Prerequisites: pwra
+		Owner: atreides
+
+
+HIGHTECHA:
+	Inherits: ^HIGHTECH
+	Buildable:
+		Prerequisites: radara
+		Owner: atreides
+
+RESEARCHA:
+	Inherits: ^RESEARCH
+	Buildable:
+		Prerequisites: radara,heavya
+		Owner: atreides
+
+PALACEA:
+	Inherits: ^PALACE
+	Buildable:
+		Prerequisites: researcha
+		Owner: atreides
+	AirstrikePower:
+		Image: orniicon
+		Description: Air Strike
+		ChargeTime: 180
+		LongDesc: Ornithopter drops a load of parachuted\nbombs on your target.
+		UnitType: orni.bomber
+		SelectTargetSound: 
+		FlareType:
+	CanPowerDown:
+	RequiresPower:
+	SupportPowerChargeBar:
+
+SILOA:
+	Inherits: ^SILO
+	Buildable:
+		Prerequisites: refa
+		Owner: atreides
+
+LIGHTA:
+	Inherits: ^LIGHT
+	Buildable:
+		Prerequisites: refa
+		Owner: atreides
+	RenderBuildingWarFactory:
+		Image: LIGHTA
+
+HEAVYA:
+	Inherits: ^HEAVY
+	Buildable:
+		Prerequisites: lighta
+		Owner: atreides
+	RenderBuildingWarFactory:
+		Image: HEAVYA
+
+RADARA:
+	Inherits: ^RADAR
+	Buildable:
+		Prerequisites: barra
+		Owner: atreides
+
+STARPORTA:
+	Inherits: ^STARPORT
+	Buildable:
+		Prerequisites: radara
+		Owner: atreides
+
+REPAIRA:
+	Inherits: ^REPAIR
+	Buildable:
+		Prerequisites: heavya
+		Owner: atreides
+
+MCVA:
+	Inherits: ^MCV
+	Buildable:
+		Prerequisites: heavya,repaira
+		Owner: atreides
+		BuiltAt: heavya
+	Transforms:
+		Facing: 10
+		IntoActor: conyarda
+		Offset:-1,-1
+		NoTransformSounds: AI_DPLOY.AUD
+	RenderUnit:
+		Image: DMCV
+
+MCVA.starport:
+	Inherits: MCVA
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporta
+	Valued:
+		Cost: 1499
+
+COMBATA:
+	Inherits: ^COMBAT
+	Tooltip:
+		Icon: combataicon
+	Buildable:
+		Prerequisites: heavya
+		Owner: atreides
+		BuiltAt: heavya
+	RenderUnitTurreted:
+		Image: COMBATA
+
+COMBATA.starport:
+	Inherits: COMBATA
+	Buildable:
+		Queue: Starport
+		BuiltAt: starporta
+	Valued:
+		Cost: 595
+
+SONICTANK:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 100
+		Prerequisites: heavya,researcha
+		Owner: atreides
+		BuiltAt: heavya
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Sonic Tank
+		Description: Fires a sound wave\n Strong vs Infantry.\n Weak vs Tanks
+		Icon: sonictankicon
+	Selectable:
+		Bounds: 30,30
+	Health:
+		HP: 150
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 8
+	RevealsShroud:
+		Range: 7
+	RenderUnit:
+		Image: SONICTANK
+	AttackFrontal:
+		PrimaryWeapon: TTankZap
+		PrimaryOffset: 0,0,0,-5
+	AutoTarget:
+
+FREMEN:
+	Inherits: ^Infantry
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Fremen
+		Description: Elite sniper infantry unit.\n  Strong vs Infantry\n  Weak vs Vehicles\n  Special Ability: Invisible
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 50
+		Owner: atreides
+		Prerequisites: palacea
+	Selectable:
+		Bounds: 12,17,0,0
+		Voice: FremenVoice
+	Mobile:
+		Speed: 5
+	Health:
+		HP: 200
+	Passenger:
+	RevealsShroud:
+		Range: 6
+	AutoTarget:
+		ScanRadius: 5
+	AttackFrontal:
+		PrimaryWeapon: Sniper
+	RenderInfantryProne:
+	-RenderInfantry:
+	TakeCover:
+	Cloak:
+		InitialDelay: 125
+		CloakDelay: 125
+		CloakSound: STEALTH1.aud
+		UncloakSound: STEALTH2.aud

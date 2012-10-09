@@ -1,0 +1,164 @@
+^CARRYALL:
+	Inherits: ^Helicopter
+	Buildable:
+		Queue: Aircraft
+		BuildPaletteOrder: 110
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Carryall
+		Description: Fast drop ship.\n  Unarmed
+		Icon: carryallicon
+	Health:
+		HP: 500
+	Armor: 
+		Type: Light
+	RevealsShroud:
+		Range: 12
+	Helicopter:
+		InitialFacing: 0
+		ROT: 5
+		Speed: 18
+		LandableTerrainTypes: Sand, Rock, Transition, Spice, Dune
+		RepairBuildings: repaira,repairo,repairh
+		RearmBuildings: starporta,starporto,starporth
+		MinimalLandAltitude: 25
+	RenderUnit:
+	RenderCargo:
+		RelativeAltitude: 20
+	WithShadow:
+	Cargo:
+		Types: Vehicle
+		MaxWeight: 1
+		PipCount: 1
+		minimalUnloadAltitude: 25
+	FallsToEarth:
+		Spins: no
+		Moves: yes
+		Explosion: UnitExplode
+
+FRIGATE:
+	ParaDrop:
+		LZRange: 1
+	Inherits: ^Plane
+	Tooltip:
+		Name: Frigate
+		Description: Supply spacecraft
+	Plane:
+		ROT: 5
+		Speed: 35
+		RepairBuildings: repaira,repairo,repairh
+		RearmBuildings: starporta,starporto,starporth
+	Health:
+		HP: 25
+	Armor:
+		Type: Heavy
+	RenderUnit:
+		Image: frigate
+	WithShadow:
+	Cargo:
+		MaxWeight: 10
+		PipCount: 10
+	Invulnerable:
+	-Selectable:
+	-GainsExperience:
+	FlyAwayOnIdle:
+
+ORNI:
+	Inherits: ^Helicopter
+	Buildable:
+		Queue: Aircraft
+		BuildPaletteOrder: 90
+		Prerequisites: researcha
+		BuiltAt: hightecha
+		Owner: atreides
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Ornithopter
+		Description: Helicopter Gunship with Chainguns.\n  Strong vs Infantry, Light Vehicles.\n  Weak vs Tanks
+	Health:
+		HP: 150
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 10
+	AttackHeli:
+		PrimaryWeapon: ChainGun
+		PrimaryOffset: -5,-2,0,2
+		FacingTolerance: 20
+	Helicopter:
+		LandWhenIdle: false
+		InitialFacing: 20
+		ROT: 4
+		Speed: 20
+		RepairBuildings: repaira,repairo,repairh
+		RearmBuildings: starporta,starporto,starporth
+	RenderUnit:
+	WithShadow:
+	Selectable:
+		Bounds: 38,32,0,0
+	FallsToEarth:
+		Spins: no
+		Moves: no
+		Explosion: UnitExplode
+	SmokeTrailWhenDamaged:
+		Offset: 0,-10
+
+ORNI.bomber:
+	CarpetBomb:
+		Range: 3
+		Weapon: Napalm
+	Inherits: ^Plane
+	Health:
+		HP: 60
+	Armor:
+		Type: Light
+	Plane:
+		ROT: 5
+		Speed: 25
+		RepairBuildings: repaira,repairo,repairh
+		RearmBuildings: starporta,starporto,starporth
+	LimitedAmmo:
+		Ammo: 8
+	RenderUnit:
+		Image: orni
+	WithShadow:
+	-Selectable:
+	-GainsExperience:
+	Tooltip:
+		Name: Ornithopter
+	FallsToEarth:
+		Spins: no
+		Moves: yes
+		Explosion: UnitExplode
+	SmokeTrailWhenDamaged:
+		Offset: 0,-10
+
+CARRYALL.infantry:
+	ParaDrop:
+		LZRange: 4
+	Inherits: ^Plane
+	Health:
+		HP: 60
+	Armor:
+		Type: Light
+	Plane:
+		ROT: 5
+		Speed: 25
+		RepairBuildings: repaira,repairo,repairh
+		RearmBuildings: starporta,starporto,starporth
+	RenderUnit:
+		Image: carryall
+	WithShadow:
+	Cargo:
+		MaxWeight: 5
+		Types: Infantry
+	-Selectable:
+	-GainsExperience:
+	Tooltip:
+		Name: Carryall
+	FallsToEarth:
+		Spins: no
+		Moves: yes
+		Explosion: UnitExplode

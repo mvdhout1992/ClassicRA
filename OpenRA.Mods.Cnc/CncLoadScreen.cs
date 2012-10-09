@@ -1,0 +1,142 @@
+#region Copyright & License Information
+/*
+ * Copyright 2007-2011 The OpenRA Developers (see AUTHORS)
+ * This file is part of OpenRA, which is free software. It is made
+ * available to you under the terms of the GNU General Public License
+ * as published by the Free Software Foundation. For more information,
+ * see COPYING.
+ */
+#endregion
+
+using System.Collections.Generic;
+using System.Drawing;
+using OpenRA.FileFormats;
+using OpenRA.Graphics;
+using OpenRA.Support;
+using OpenRA.Widgets;
+
+namespace OpenRA.Mods.Cnc
+{
+	public class CncLoadScreen : ILoadScreen
+	{
+		Dictionary<string, string> Info;
+		Stopwatch loadTimer = new Stopwatch();
+		Sprite[] ss;
+		int loadTick;
+		float2 nodPos, gdiPos, evaPos;
+		Sprite nodLogo, gdiLogo, evaLogo, brightBlock, dimBlock;
+		Rectangle Bounds;
+		Renderer r;
+		NullInputHandler nih = new NullInputHandler();
+
+		public void Init(Dictionary<string, string> info)
+		{
+			Info = info;
+
+			// Avoid standard loading mechanisms so we
+			// can display loadscreen as early as possible
+			r = Game.Renderer;
+			if (r == null) return;
+
+			var s = new Sheet("mods/cnc/uibits/chrome.png");
+			var res = Renderer.Resolution;
+			Bounds = new Rectangle(0, 0, res.Width, res.Height);
+
+			ss = new []
+			{
+				new Sprite(s, new Rectangle(161,128,62,33), TextureChannel.Alpha),
+				new Sprite(s, new Rectangle(161,223,62,33), TextureChannel.Alpha),
+				new Sprite(s, new Rectangle(128,161,33,62), TextureChannel.Alpha),
+				new Sprite(s, new Rectangle(223,161,33,62), TextureChannel.Alpha),
+				new Sprite(s, new Rectangle(128,128,33,33), TextureChannel.Alpha),
+				new Sprite(s, new Rectangle(223,128,33,33), TextureChannel.Alpha),
+				new Sprite(s, new Rectangle(128,223,33,33), TextureChannel.Alpha),
+				new Sprite(s, new Rectangle(223,223,33,33), TextureChannel.Alpha)
+			};
+
+			nodLogo = new Sprite(s, new Rectangle(0, 256, 256, 256), TextureChannel.Alpha);
+			gdiLogo = new Sprite(s, new Rectangle(256, 256, 256, 256), TextureChannel.Alpha);
+			evaLogo = new Sprite(s, new Rectangle(256, 64, 128, 64), TextureChannel.Alpha);
+			nodPos = new float2(Bounds.Width / 2 - 384, Bounds.Height / 2 - 128);
+			gdiPos = new float2(Bounds.Width / 2 + 128, Bounds.Height / 2 - 128);
+			evaPos = new float2(Bounds.Width - 43 - 128, 43);
+
+			brightBlock = new Sprite(s, new Rectangle(320, 0, 16, 35), TextureChannel.Alpha);
+			dimBlock = new Sprite(s, new Rectangle(336, 0, 16, 35), TextureChannel.Alpha);
+		}
+
+		bool setup;
+		SpriteFont loadingFont, versionFont;
+		string loadingText, versionText;
+		float2 loadingPos, versionPos;
+
+		public void Display()
+		{
+			if (r == null || loadTimer.ElapsedTime() < 0.25)
+				return;
+
+			loadTimer.Reset();
+
+			loadTick = ++loadTick % 8;
+			r.BeginFrame(float2.Zero, 1f);
+			r.RgbaSpriteRenderer.DrawSprite(gdiLogo, gdiPos);
+			r.RgbaSpriteRenderer.DrawSprite(nodLogo, nodPos);
+			r.RgbaSpriteRenderer.DrawSprite(evaLogo, evaPos);
+
+			WidgetUtils.DrawPanelPartial(ss, Bounds, PanelSides.Edges);
+			var barY = Bounds.Height - 78;
+
+			if (!setup)
+			{
+				loadingFont = r.Fonts["BigBold"];
+				loadingText = "Loading";
+				loadingPos = new float2((Bounds.Width - loadingFont.Measure(loadingText).X) / 2, barY);
+
+				versionFont = r.Fonts["Regular"];
+				versionText = WidgetUtils.ActiveModVersion();
+				var versionSize = versionFont.Measure(versionText);
+				versionPos = new float2(Bounds.Width - 107 - versionSize.X/2, 115 - versionSize.Y/2);
+
+				setup = true;
+			}
+
+			loadingFont.DrawText(loadingText, loadingPos, Color.Gray);
+			versionFont.DrawTextWithContrast(versionText, versionPos, Color.White, Color.Black, 2);
+
+			for (var i = 0; i <= 8; i++)
+			{
+				var block = loadTick == i ? brightBlock : dimBlock;
+				r.RgbaSpriteRenderer.DrawSprite(block,
+					new float2(Bounds.Width / 2 - 114 - i * 32, barY));
+				r.RgbaSpriteRenderer.DrawSprite(block,
+					new float2(Bounds.Width / 2 + 114 + i * 32 - 16, barY));
+			}
+
+			r.EndFrame(nih);
+		}
+
+		public void StartGame()
+		{
+			TestAndContinue();
+			Game.JoinExternalGame();
+		}
+
+		void TestAndContinue()
+		{
+			Ui.ResetAll();
+			if (!FileSystem.Exists(Info["TestFile"]))
+			{
+				var args = new WidgetArgs()
+				{
+					{ "continueLoading", () => TestAndContinue() },
+					{ "installData", Info }
+				};
+				Ui.LoadWidget(Info["InstallerBackgroundWidget"], Ui.Root, args);
+				Ui.OpenWindow(Info["InstallerMenuWidget"], args);
+			}
+			else
+				Game.LoadShellMap();
+		}
+	}
+}
+
