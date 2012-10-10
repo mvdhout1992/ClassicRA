@@ -246,7 +246,7 @@ HELI:
 		LandWhenIdle: false
 		InitialFacing: 20
 		ROT: 4
-		Speed: 16
+		Speed: 24
 	RenderUnit:
 	WithRotor:
 		Offset: 0,0,0,-2

@@ -145,7 +145,7 @@ namespace OpenRA.Mods.RA.Classic.AI
         public void Debug(string s, params object[] args)
         {
             //           if (Game.Settings.Debug.BotDebug)
-            Game.Debug(String.Format("Bot {0}: {1}", this.p.ClientIndex, String.Format(s, args)));
+//            Game.Debug(String.Format("Bot {0}: {1}", this.p.ClientIndex, String.Format(s, args)));
         }
 
         public Actor ChooseEnemyTarget(string type)

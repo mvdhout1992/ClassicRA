@@ -290,7 +290,7 @@ namespace OpenRA
 
 			// Discard any invalid mods, set RA as default
 			var mm = mods.Where( m => Mod.AllMods.ContainsKey( m ) ).ToArray();
-			if (mm.Length == 0) mm = new[] { "ra" };
+			if (mm.Length == 0) mm = new[] { "ra-classic" };
 			Console.WriteLine("Loading mods: {0}", mm.JoinWith(","));
 			Settings.Game.Mods = mm;
 

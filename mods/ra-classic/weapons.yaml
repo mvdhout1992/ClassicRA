@@ -199,7 +199,7 @@ M1Carbine:
 	Warhead:
 		Spread: 3
 		Versus:
-			None: 100
+			None: 90%
 			Wood: 50%
 			Light: 60%
 			Heavy: 25%
@@ -243,8 +243,8 @@ HellfireAG:
 	ROF: 60
 	Range: 4
 	Report: MISSILE6
-	Burst: 1
-#	BurstDelay: 1
+	Burst: 2
+	BurstDelay: 8
 	ValidTargets: Ground
 	Projectile: Missile
 		Speed: 30
