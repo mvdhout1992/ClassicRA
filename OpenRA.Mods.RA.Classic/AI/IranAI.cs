@@ -21,7 +21,7 @@ using OpenRA.Mods.RA.Classic.Air;
 using OpenRA.Mods.RA.Classic.Activities;
 
 
-// Based on BetaAI
+// Based on ValkirieAI/BetaAI and HackyAI
 // Contributors: JamesDunne, Earthpig, Mart0258, Mailaender, Chrisforbes, Valkirie
 // 
 
