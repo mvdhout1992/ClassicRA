@@ -1,1 +1,11 @@
-﻿
+﻿Decrease v2 rocket speed, 30-40%
+MIGs always miss; fix that
+Make Yaks fire their entire payload in one strafe; could possibly make them prefire too
+Mammoths are only supposed to use their tusk missiles against air and infantry; fix that
+Mammoths have issues hitting units that are 1-2 cells in front of them with their tusk missiles
+Make airplanes/helis explode in the air once destroyed, or remove their splash damage when they crash
+Soviets stop using air at some point; fix that, I suppose
+Make the Soviet AI use helis too?
+Make all projectiles hit the location where the targeted unit was, instead of homing in on the unit (does not apply to hitscan weapons, like rifles and machineguns)
+Increase the Light Tank's ROF
+Make walls targetable

@@ -20,6 +20,11 @@ using System.Collections;
 using OpenRA.Mods.RA.Classic.Air;
 using OpenRA.Mods.RA.Classic.Activities;
 
+
+// Based on BetaAI
+// Contributors: JamesDunne, Earthpig, Mart0258, Mailaender, Chrisforbes, Valkirie
+// 
+
 namespace OpenRA.Mods.RA.Classic.AI
 {
     class IranAIInfo : IBotInfo, ITraitInfo
