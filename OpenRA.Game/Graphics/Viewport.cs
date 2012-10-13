@@ -61,11 +61,11 @@ namespace OpenRA.Graphics
 				// Update scroll limits
 				var viewTL = (Game.CellSize*new float2(mapBounds.Left, mapBounds.Top)).ToInt2();
 				var viewBR = (Game.CellSize*new float2(mapBounds.Right, mapBounds.Bottom)).ToInt2();
-				var border = (.5f/Zoom * screenSize.ToFloat2()).ToInt2();
-				scrollLimits = Rectangle.FromLTRB(viewTL.X - border.X,
-											  viewTL.Y - border.Y,
-											  viewBR.X - border.X,
-											  viewBR.Y - border.Y);
+                var border = (0.1f/Zoom * screenSize.ToFloat2()).ToInt2();
+				scrollLimits = Rectangle.FromLTRB(viewTL.X,
+                                              viewTL.Y + Game.CellSize,
+                                             viewBR.X /* - (Game.CellSize * 40)*/,
+                                              viewBR.Y /* - (Game.CellSize * 30 )*/ );
 				// Re-center viewport
 				scrollPosition = NormalizeScrollPosition((oldCenter - 0.5f / Zoom * screenSize.ToFloat2()).ToInt2());
 			}

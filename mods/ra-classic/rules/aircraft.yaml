@@ -23,16 +23,16 @@ BADR:
 #		ContrailOffset: 11, -11
 #	Contrail@2:
 #		ContrailOffset: -11, -11
-	FallsToEarth:
-		Spins: no
-		Moves: yes
-		Explosion: UnitExplode
-	SmokeTrailWhenDamaged@0:
-		Offset: 11, -11
-		Interval: 2
-	SmokeTrailWhenDamaged@1:
-		Offset: -11, -11
-		Interval: 2
+#	FallsToEarth:
+#		Spins: no
+#		Moves: yes
+#		Explosion: UnitExplode
+#	SmokeTrailWhenDamaged@0:
+#		Offset: 11, -11
+#		Interval: 2
+#	SmokeTrailWhenDamaged@1:
+#		Offset: -11, -11
+#		Interval: 2
 	-EjectOnDeath:
 	-GpsDot:
 
@@ -47,7 +47,7 @@ BADR.bomber:
 		Type: Light
 	Plane:
 		ROT: 5
-		Speed: 16
+		Speed: 32
 	LimitedAmmo:
 		Ammo: 7
 	RenderUnit:
@@ -62,16 +62,16 @@ BADR.bomber:
 #		ContrailOffset: 11, -11
 #	Contrail@2:
 #		ContrailOffset: -11, -11
-	FallsToEarth:
-		Spins: no
-		Moves: yes
-		Explosion: UnitExplode
-	SmokeTrailWhenDamaged@0:
-		Offset: 11, -11
-		Interval: 2
-	SmokeTrailWhenDamaged@1:
-		Offset: -11, -11
-		Interval: 2
+#	FallsToEarth:
+#		Spins: no
+#		Moves: yes
+#		Explosion: UnitExplode
+#	SmokeTrailWhenDamaged@0:
+#		Offset: 11, -11
+#		Interval: 2
+#	SmokeTrailWhenDamaged@1:
+#		Offset: -11, -11
+#		Interval: 2
 	-EjectOnDeath:
 	-GpsDot:
 
@@ -101,7 +101,7 @@ MIG:
 	Plane:
 		InitialFacing: 192
 		ROT: 5
-		Speed: 20
+		Speed: 40
 		RearmBuildings: afld
 	RenderUnit:
 	WithShadow:
@@ -115,13 +115,13 @@ MIG:
 #		ContrailOffset: 16,-14
 #	Contrail@2:
 #		ContrailOffset: -16,-14
-	FallsToEarth:
-		Spins: no
-		Moves: yes
-		Explosion: UnitExplode
-	SmokeTrailWhenDamaged:
-		Offset: 0,-20,0,-4
-		Interval: 2
+#	FallsToEarth:
+#		Spins: no
+#		Moves: yes
+#		Explosion: UnitExplode
+#	SmokeTrailWhenDamaged:
+#		Offset: 0,-20,0,-4
+#		Interval: 2
 #	-GainsExperience:
 
 YAK:
@@ -153,7 +153,7 @@ YAK:
 		RearmBuildings: afld
 		InitialFacing: 192
 		ROT: 5
-		Speed: 16
+		Speed: 32
 	RenderUnit:
 	WithShadow:
 	LimitedAmmo:
@@ -165,13 +165,13 @@ YAK:
 	WithMuzzleFlash:
 #	Contrail:
 #		ContrailOffset: 0, -20
-	FallsToEarth:
-		Spins: no
-		Moves: yes
-		Explosion: UnitExplode
-	SmokeTrailWhenDamaged:
-		Offset: 0, -20
-		Interval: 2
+#	FallsToEarth:
+#		Spins: no
+#		Moves: yes
+#		Explosion: UnitExplode
+#	SmokeTrailWhenDamaged:
+#		Offset: 0, -20
+#		Interval: 2
 #	-GainsExperience:
 		
 
@@ -198,7 +198,7 @@ TRAN:
 		RearmBuildings: hpad
 		InitialFacing: 0
 		ROT: 5
-		Speed: 12
+		Speed: 18
 		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach
 	RenderUnit:
 	WithRotor@PRIMARY:
@@ -212,8 +212,8 @@ TRAN:
 		MaxWeight: 5
 		PipCount: 5
 	IronCurtainable:
-	FallsToEarth:
-		Explosion: UnitExplode
+#	FallsToEarth:
+#		Explosion: UnitExplode
 #	-GainsExperience:
 
 HELI:
@@ -254,10 +254,10 @@ HELI:
 	LimitedAmmo:
 		Ammo: 6
 	IronCurtainable:
-	FallsToEarth:
-		Explosion: UnitExplode
-	SmokeTrailWhenDamaged:
-		Offset: 0,-10
+#	FallsToEarth:
+#		Explosion: UnitExplode
+#	SmokeTrailWhenDamaged:
+#		Offset: 0,-10
 #	-GainsExperience:
 
 HIND:
@@ -290,7 +290,7 @@ HIND:
 		LandWhenIdle: false
 		InitialFacing: 20
 		ROT: 4
-		Speed: 12
+		Speed: 18
 	RenderUnit:
 	WithRotor:
 	WithShadow:
@@ -303,10 +303,10 @@ HIND:
 	Selectable:
 		Bounds: 38,32,0,0
 	WithMuzzleFlash:
-	FallsToEarth:
-		Explosion: UnitExplode
-	SmokeTrailWhenDamaged:
-		Offset: 0,-10
+#	FallsToEarth:
+#		Explosion: UnitExplode
+#	SmokeTrailWhenDamaged:
+#		Offset: 0,-10
 
 U2:
 	Inherits: ^Plane
@@ -316,7 +316,7 @@ U2:
 		Type: Heavy
 	Plane:
 		ROT: 7
-		Speed: 40
+		Speed: 80
 	RenderUnit:
 	WithShadow:
 	IronCurtainable:
@@ -326,10 +326,10 @@ U2:
 #		ContrailOffset: 16, -17
 #	Contrail@2:
 #		ContrailOffset: -16, -17
-	FallsToEarth:
-		Spins: no
-		Moves: yes
-		Explosion: UnitExplode
-	SmokeTrailWhenDamaged:
-		Offset: 0,-25
-		Interval: 2
+#	FallsToEarth:
+#		Spins: no
+#		Moves: yes
+#		Explosion: UnitExplode
+#	SmokeTrailWhenDamaged:
+#		Offset: 0,-25
+#		Interval: 2

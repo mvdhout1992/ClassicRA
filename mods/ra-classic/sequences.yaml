@@ -504,11 +504,11 @@ v2rl:
 		Start: 32
 		Facings: 32
 	aim:
-		Start: 64
-		Facings: 8
+		Start: 0
+		Facings: 32
 	empty-aim:
-		Start: 72
-		Facings: 8
+		Start: 32
+		Facings: 32
 
 arty:
 	idle:

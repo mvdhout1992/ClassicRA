@@ -23,8 +23,8 @@ namespace OpenRA.Mods.RA.Classic.Widgets
 {
 	class BuildPaletteWidget : Widget
 	{
-		public int Columns = 3;
-		public int Rows = 5;
+		public int Columns = 2;
+		public int Rows = 8;
 
 		ProductionQueue CurrentQueue;
 		List<ProductionQueue> VisibleQueues;
@@ -201,27 +201,27 @@ namespace OpenRA.Mods.RA.Classic.Widgets
 			if (queue != null)
 			{
 				var buildableItems = queue.BuildableItems().ToArray();
-				var allBuildables = queue.AllItems().OrderBy(a => a.Traits.Get<BuildableInfo>().BuildPaletteOrder).ToArray();
+                var allBuildables = queue.BuildableItems().OrderBy(a => a.Traits.Get<BuildableInfo>().BuildPaletteOrder).ToArray();
 
 				var overlayBits = new List<Pair<Sprite, float2>>();
 				var textBits = new List<Pair<float2, string>>();
 				numActualRows = Math.Max((allBuildables.Count() + Columns - 1) / Columns, Rows);
 
 				// Palette Background
-				WidgetUtils.DrawRGBA(ChromeProvider.GetImage(paletteCollection, "top"), new float2(origin.X - 9, origin.Y - 9));
+				WidgetUtils.DrawRGBA(ChromeProvider.GetImage(paletteCollection, "top"), new float2(origin.X + 55, origin.Y + 31));
 				for (var w = 0; w < numActualRows; w++)
 					WidgetUtils.DrawRGBA(
 						ChromeProvider.GetImage(paletteCollection, "bg-" + (w % 4).ToString()),
-						new float2(origin.X - 9, origin.Y + 48 * w));
+						new float2(origin.X + 55, (origin.Y + 40) + 48 * w));
 				WidgetUtils.DrawRGBA(ChromeProvider.GetImage(paletteCollection, "bottom"),
-					new float2(origin.X - 9, origin.Y - 1 + 48 * numActualRows));
+					new float2(origin.X + 55, (origin.Y + 39) + 48 * numActualRows));
 
 
 				// Icons
 				string tooltipItem = null;
 				foreach (var item in allBuildables)
 				{
-					var rect = new RectangleF(origin.X + x * 64, origin.Y + 48 * y, 64, 48);
+					var rect = new RectangleF((origin.X + 64) + x * 64, (origin.Y + 40) + 48 * y, 64, 48);
 					var drawPos = new float2(rect.Location);
 					WidgetUtils.DrawSHP(iconSprites[item.Name], drawPos, worldRenderer);
 
@@ -243,13 +243,17 @@ namespace OpenRA.Mods.RA.Classic.Widgets
 						if (queue.CurrentItem() == firstOfThis)
 							textBits.Add( Pair.New( overlayPos, GetOverlayForItem(firstOfThis) ) );
 
+
 						var repeats = queue.AllQueued().Count(a => a.Item == item.Name);
 						if (repeats > 1 || queue.CurrentItem() != firstOfThis)
 							textBits.Add(Pair.New(overlayPos + new float2(-24, -14), repeats.ToString()));
 					}
-					else
-						if (!buildableItems.Any(a => a.Name == item.Name))
-							overlayBits.Add(Pair.New(cantBuild.Image, drawPos));
+                    else
+                        if (queue.AllQueued().Any())
+                        overlayBits.Add(Pair.New(cantBuild.Image, drawPos));
+//                    else
+//						if (!buildableItems.Any(a => a.Name == item.Name))
+               
 
 					var closureName = buildableItems.Any(a => a.Name == item.Name) ? item.Name : null;
 					buttons.Add(Pair.New(new Rectangle((int)rect.X, (int)rect.Y, (int)rect.Width, (int)rect.Height), HandleClick(closureName, world)));
@@ -401,8 +405,8 @@ namespace OpenRA.Mods.RA.Classic.Widgets
 		{
 			const int tabWidth = 24;
 			const int tabHeight = 40;
-			var x = paletteOrigin.X - tabWidth;
-			var y = paletteOrigin.Y + 9;
+			var x = paletteOrigin.X + 87;
+			var y = paletteOrigin.Y;
 
 			tabs.Clear();
 
@@ -430,7 +434,7 @@ namespace OpenRA.Mods.RA.Classic.Widgets
 					font.DrawText(text, new float2(rect.Left - sz.X - 20, rect.Top + 12), Color.White);
 				}
 
-				y += tabHeight;
+				x += tabWidth;
 			}
 		}
 

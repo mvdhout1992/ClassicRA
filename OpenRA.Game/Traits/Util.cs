@@ -74,6 +74,9 @@ namespace OpenRA.Traits
 
 		public static int QuantizeFacing(int facing, int numFrames)
 		{
+            if (numFrames == 0)
+                numFrames = 1;
+
 			var step = 256 / numFrames;
 			var a = (facing + step / 2) & 0xff;
 			return a / step;

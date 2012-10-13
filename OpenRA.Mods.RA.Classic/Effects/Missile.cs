@@ -16,6 +16,7 @@ using OpenRA.Effects;
 using OpenRA.GameRules;
 using OpenRA.Graphics;
 using OpenRA.Traits;
+using OpenRA.Mods.RA.Classic.Air;
 
 namespace OpenRA.Mods.RA.Classic.Effects
 {
@@ -55,6 +56,7 @@ namespace OpenRA.Mods.RA.Classic.Effects
 		int t;
 		int Altitude;
 		ContrailHistory Trail;
+        PPos TargetLocation;
 
 		public Missile(MissileInfo info, ProjectileArgs args)
 		{
@@ -80,6 +82,7 @@ namespace OpenRA.Mods.RA.Classic.Effects
 					Info.ContrailUsePlayerColor ? ContrailHistory.ChooseColor(args.firedBy) : Info.ContrailColor,
 					Info.ContrailDelay);
 			}
+            TargetLocation = args.target.CenterLocation;
 		}
 
 		// In pixels
@@ -90,8 +93,10 @@ namespace OpenRA.Mods.RA.Classic.Effects
 		{
 			t += 40;
 
+            if (Args.target.Actor != null && Args.target.Actor.HasTrait<Aircraft>())
+                TargetLocation = Args.target.CenterLocation;
 			// In pixels
-			var dist = Args.target.CenterLocation + offset - PxPosition;
+			var dist = TargetLocation + offset - PxPosition;
 
 			var targetAltitude = 0;
 			if (Args.target.IsValid && Args.target.IsActor && Args.target.Actor.HasTrait<IMove>())
@@ -152,7 +157,7 @@ namespace OpenRA.Mods.RA.Classic.Effects
 		{
 			world.AddFrameEndTask(w => w.Remove(this));
 			Args.dest = PxPosition;
-			if (t > Info.Arm * 40)	/* don't blow up in our launcher's face! */
+//			if (t > Info.Arm * 40)	/* don't blow up in our launcher's face! */
 				Combat.DoImpacts(Args);
 		}
 

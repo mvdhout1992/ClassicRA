@@ -55,10 +55,10 @@ Vulcan:
 Maverick:
 	ROF: 3
 	Range: 6
-#	MinRange: 3
+	MinRange: 3
 	Report: MISSILE7
-#	Burst: 2
-	BurstDelay: 7
+	Burst: 2
+	BurstDelay: 1
 	ValidTargets: Ground
 	Projectile: Missile
 		Speed: 30
@@ -66,13 +66,13 @@ Maverick:
 		High: true
 		Shadow: false
 		Proximity: true
-#		Trail: smokey
+		Trail: smokey
 #		ContrailLength: 10
 		Inaccuracy: 3
 		Angle: 0.1
 		Image: DRAGON
 		ROT: 5
-		RangeLimit: 8
+#		RangeLimit: 8
 	Warhead:
 		Spread: 3
 		Versus: 
@@ -136,6 +136,7 @@ ChainGun:
 	ROF: 3
 	Range: 5
 	MinRange: 1
+	Burst: 3
 	Report: GUN13
 	Projectile: Bullet
 		Speed: 100
@@ -890,7 +891,7 @@ Heal:
 #		Damage: 150
 		
 SCUD:
-	ROF: 400
+	ROF: 300
 	Range: 10
 	MinRange: 3
 	Report: MISSILE1

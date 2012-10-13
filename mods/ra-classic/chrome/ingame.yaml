@@ -55,7 +55,7 @@ Container@INGAME_ROOT:
 			Y:25
 		BuildPalette@INGAME_BUILD_PALETTE:
 			X:WINDOW_RIGHT - 250
-			Y:280
+			Y:200 # 280 before
 			Width:250
 			Height:500
 		Button@INGAME_OPTIONS_BUTTON:
@@ -84,6 +84,11 @@ Container@INGAME_ROOT:
 		RadarBin@INGAME_RADAR_BIN:
 			WorldInteractionController:INTERACTION_CONTROLLER
 		PowerBin@INGAME_POWER_BIN:
+			X:WINDOW_RIGHT - 300
+			Y:0
+			Width:32
+			Height: 320
+			
 		MoneyBin@INGAME_MONEY_BIN:
 			X:WINDOW_RIGHT - WIDTH
 			Y:0
@@ -327,8 +332,8 @@ Container@OBSERVER_ROOT:
 					Text:Abort Mission
 					Font:Bold
 		ChatDisplay@CHAT_DISPLAY:
-			X:250
-			Y:WINDOW_BOTTOM - HEIGHT - 30
+			X:50
+			Y:30
 			Width: 760
 			Height: 200
 			DrawBackground: False

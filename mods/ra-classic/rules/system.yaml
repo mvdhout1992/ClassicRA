@@ -2,31 +2,31 @@ Player:
 	TechTree:
 	ClassicProductionQueue@Building:
 		Type: Building
-		BuildSpeed: .8
+		BuildSpeed: .2
 		LowPowerSlowdown: 2
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
 	ClassicProductionQueue@Defense:
 		Type: Defense
-		BuildSpeed: .8
+		BuildSpeed: .2
 		LowPowerSlowdown: 2
 		QueuedAudio: Building
 		ReadyAudio: ConstructionComplete
 	ClassicProductionQueue@Vehicle:
 		Type: Vehicle
-		BuildSpeed: .8
+		BuildSpeed: .2
 		LowPowerSlowdown: 2
 	ClassicProductionQueue@Infantry:
 		Type: Infantry
-		BuildSpeed: .8
+		BuildSpeed: .2
 		LowPowerSlowdown: 2
 	ClassicProductionQueue@Ship:
 		Type: Ship
-		BuildSpeed: .4
+		BuildSpeed: .2
 		LowPowerSlowdown: 2
 	ClassicProductionQueue@Plane:
 		Type: Plane
-		BuildSpeed: .8
+		BuildSpeed: .2
 		LowPowerSlowdown: 2
 	PlaceBuilding:
 	SupportPowerManager:

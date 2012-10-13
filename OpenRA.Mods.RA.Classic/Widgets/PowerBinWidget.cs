@@ -19,8 +19,8 @@ namespace OpenRA.Mods.RA.Classic.Widgets
 	public class PowerBinWidget : Widget
 	{
 		// Power bar
-		float2 powerOrigin = new float2(42, 205); // Relative to radarOrigin
-		Size powerSize = new Size(138, 5);
+		float2 powerOrigin = new float2(42, 280); // Relative to radarOrigin
+		Size powerSize = new Size(5, 138);
 
 		float? lastPowerProvidedPos;
 		float? lastPowerDrainedPos;
@@ -53,7 +53,7 @@ namespace OpenRA.Mods.RA.Classic.Widgets
 			if( world.LocalPlayer == null ) return;
 			if( world.LocalPlayer.WinState != WinState.Undefined ) return;
 
-			var radarBin = Ui.Root.Get<RadarBinWidget>(RadarBin);
+//			var radarBin = Ui.Root.Get<RadarBinWidget>(RadarBin);
 
 			powerCollection = "power-" + world.LocalPlayer.Country.Race;
 
@@ -61,9 +61,9 @@ namespace OpenRA.Mods.RA.Classic.Widgets
 			if (power.PowerProvided == 0 && power.PowerDrained == 0)
 				return;
 
-			// Draw bar horizontally
-			var barStart = powerOrigin + radarBin.RadarOrigin;
-			var barEnd = barStart + new float2(powerSize.Width, 0);
+			// Draw bar vertically
+            var barStart = powerOrigin;
+			var barEnd = barStart + new float2(0, powerSize.Height);
 
 			float powerScaleBy = 100;
 			var maxPower = Math.Max(power.PowerProvided, power.PowerDrained);
@@ -71,7 +71,7 @@ namespace OpenRA.Mods.RA.Classic.Widgets
 			while (maxPower >= powerScaleBy) powerScaleBy *= 2;
 
 			// Current power supply
-			var powerLevelTemp = barStart.X + (barEnd.X - barStart.X) * (power.PowerProvided / powerScaleBy);
+			var powerLevelTemp = barStart.Y + (barEnd.Y - barStart.Y) * (power.PowerProvided / powerScaleBy);
 			lastPowerProvidedPos = float2.Lerp(lastPowerProvidedPos.GetValueOrDefault(powerLevelTemp), powerLevelTemp, PowerBarLerpFactor);
 			var powerLevel = new float2(lastPowerProvidedPos.Value, barStart.Y);
 
@@ -86,8 +86,8 @@ namespace OpenRA.Mods.RA.Classic.Widgets
 				// Indent corners
 				if ((i == 0 || i == powerSize.Height - 1) && powerLevel.X - barStart.X > 1)
 				{
-					leftOffset.X += 1;
-					rightOffset.X -= 1;
+					leftOffset.Y += 1;
+					rightOffset.Y -= 1;
 				}
 				Game.Renderer.LineRenderer.DrawLine(barStart + leftOffset, powerLevel + rightOffset, color, color);
 			}

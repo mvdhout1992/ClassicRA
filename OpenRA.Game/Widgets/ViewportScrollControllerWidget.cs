@@ -17,7 +17,7 @@ namespace OpenRA.Widgets
 {
 	public class ViewportScrollControllerWidget : Widget
 	{
-		public int EdgeScrollThreshold = 15;
+		public int EdgeScrollThreshold = 20;
 
 		ScrollDirection Keyboard;
 		ScrollDirection Edge;
@@ -123,6 +123,7 @@ namespace OpenRA.Widgets
 				scroll.Y = (scroll.Y / length) * Game.Settings.Game.ViewportEdgeScrollStep;
 
 				Game.viewport.Scroll(scroll);
+                Game.viewport.Scroll(scroll);
 			}
 		}
 

@@ -16,7 +16,7 @@ DOG:
 	Health:
 		HP: 12
 	Mobile:
-		Speed: 4
+		Speed: 7
 	RevealsShroud:
 		Range: 5
 	AutoTarget:
@@ -44,7 +44,7 @@ E1:
 	Health:
 		HP: 50
 	Mobile:
-		Speed: 4
+		Speed: 7
 	AttackFrontal:
 		PrimaryWeapon: M1Carbine
 	TakeCover:
@@ -70,7 +70,7 @@ E2:
 	Health:
 		HP: 50
 	Mobile:
-		Speed: 5
+		Speed: 9
 	AttackFrontal:
 		PrimaryWeapon: Grenade
 		PrimaryOffset: 0,0,0,-13
@@ -100,7 +100,7 @@ E3:
 	Health:
 		HP: 45
 	Mobile:
-		Speed: 3
+		Speed: 5
 	AttackFrontal:
 		PrimaryWeapon: RedEye
 		SecondaryWeapon: Dragon
@@ -128,7 +128,7 @@ E4:
 	Health:
 		HP: 40
 	Mobile:
-		Speed: 3
+		Speed: 5
 	AttackFrontal:
 		PrimaryWeapon: Flamer
 		PrimaryOffset: 0,-10,0,-8
@@ -156,7 +156,7 @@ E6:
 	Health:
 		HP: 25
 	Mobile:
-		Speed: 4
+		Speed: 7
 	Passenger:
 		PipType: Yellow
 	EngineerRepair:
@@ -188,7 +188,7 @@ SPY:
 	Health:
 		HP: 25
 	Mobile:
-		Speed: 4
+		Speed: 7
 	RevealsShroud:
 		Range: 5
 	Passenger:
@@ -223,7 +223,7 @@ E7:
 	Health:
 		HP: 100
 	Mobile:
-		Speed: 5
+		Speed: 9
 	RevealsShroud:
 		Range: 6
 	C4Demolition:
@@ -257,7 +257,7 @@ MEDI:
 	Health:
 		HP: 80
 	Mobile:
-		Speed: 4
+		Speed: 7
 	RevealsShroud:
 		Range: 3
 	Passenger:
@@ -286,7 +286,7 @@ C1:
 	Health:
 		HP: 25
 	Mobile:
-		Speed: 5
+		Speed: 9
 	RevealsShroud:
 		Range: 2
 	AttackFrontal:
@@ -307,7 +307,7 @@ C2:
 	Health:
 		HP: 25
 	Mobile:
-		Speed: 5
+		Speed: 9
 	RevealsShroud:
 		Range: 2
 	AttackFrontal:
@@ -333,7 +333,7 @@ SHOK:
 	Health:
 		HP: 80
 	Mobile:
-		Speed: 3
+		Speed: 5
 	RevealsShroud:
 		Range: 4
 	AttackFrontal:
